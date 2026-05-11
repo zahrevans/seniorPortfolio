@@ -1146,7 +1146,7 @@ let isTransitioning = false;
 let siteEntered = false;
 
 // ── THEME APPLICATION ──────────────────────────────────────────────────────
-function applyTheme(m) {
+function applyTheme(m, idx) {
     document.documentElement.style.setProperty("--ui-accent", m.accentCSS);
     document.documentElement.style.setProperty("--ui-muted", m.uiMuted);
     document.getElementById("month-counter").textContent = `${m.num} / 12`;
@@ -1156,9 +1156,9 @@ function applyTheme(m) {
     renderer.setClearColor(m.fogColor, 1);
     const col = new THREE.Color(m.accentHex);
     fillLight.color.copy(col);
-    document
+     document
         .querySelectorAll(".nav-dot")
-        .forEach((d, i) => d.classList.toggle("active", i === currentMonth));
+        .forEach((d, i) => d.classList.toggle("active", i === (idx ?? currentMonth)));
     updateMonthLabel(m.name, m.accentCSS);
 }
 
@@ -1190,7 +1190,7 @@ function goToMonth(idx) {
     tl.call(() => {
         monthGroups[currentMonth].visible = false;
         monthGroups[idx].visible = true;
-        applyTheme(m);
+        applyTheme(m, idx);
         camera.position.set(cf.x, cf.y, cf.z);
         camera.lookAt(0, 0, 0);
         gsap.set(monthLabelEl, { scale: 1.1 });
@@ -1226,7 +1226,7 @@ scrollEl.addEventListener("scroll", () => {
     const prog =
         scrollEl.scrollTop / (scrollEl.scrollHeight - scrollEl.clientHeight);
     document.getElementById("progress").style.width = prog * 100 + "%";
-    const idx = Math.min(11, Math.floor(prog * 12));
+    const idx = Math.min(11, Math.round(prog * 11));
     if (idx !== currentMonth && !isTransitioning) goToMonth(idx);
 });
 
@@ -1237,13 +1237,14 @@ MONTHS.forEach((m, i) => {
     btn.className = "nav-dot" + (i === 0 ? " active" : "");
     btn.title = m.name;
     btn.addEventListener("click", () => {
-        if (!siteEntered) return;
-        const maxScroll = scrollEl.scrollHeight - scrollEl.clientHeight;
-        scrollEl.scrollTo({
-            top: (i / 12) * maxScroll + 1,
-            behavior: "smooth",
-        });
+    if (!siteEntered) return;
+    const maxScroll = scrollEl.scrollHeight - scrollEl.clientHeight;
+    scrollEl.scrollTo({
+        top: (i / 11) * maxScroll,
+        behavior: "smooth",
     });
+    goToMonth(i); // directly trigger month instead of waiting for scroll event
+});
     navDots.appendChild(btn);
 });
 
