@@ -1295,8 +1295,42 @@ function enterSite() {
         document.getElementById("projects-btn").classList.add("visible");
         applyTheme(MONTHS[0]);
     }, 1100);
-    
+    const scrollLabel = document.getElementById("scroll-label");
+    scrollLabel.style.pointerEvents = "all";
+    scrollLabel.style.cursor = "pointer";  // note: body has cursor:none so your custom cursor handles this
+    scrollLabel.addEventListener("click", returnToIntro);
 }
+function returnToIntro() {
+    siteEntered = false;
+    scrollEl.scrollTo({ top: 0, behavior: "instant" });
+    goToMonth(0);
+
+    // Fade UI out
+    gsap.to("#ui", {
+        opacity: 0,
+        duration: 0.5,
+        ease: "power2.in",
+        onComplete: () => gsap.set("#ui", { opacity: 1 }),
+    });
+
+    // Bring intro back
+    const intro = document.getElementById("intro");
+    intro.style.display = "flex";
+    gsap.fromTo("#intro", { opacity: 0 }, { opacity: 1, duration: 0.8, delay: 0.3, ease: "power2.out" });
+
+    // Re-animate intro elements
+    gsap.fromTo("#intro-name", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, delay: 0.5, ease: "expo.out" });
+    gsap.fromTo("#intro-title", { opacity: 0 }, { opacity: 1, duration: 0.8, delay: 0.85, ease: "power1.out" });
+    gsap.fromTo("#intro-sub", { opacity: 0 }, { opacity: 1, duration: 0.8, delay: 1.05, ease: "power1.out" });
+    gsap.fromTo("#enter-btn", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7, delay: 1.25, ease: "back.out(1.3)" });
+
+    // Fade UI back in when intro is dismissed again
+    gsap.set("#ui", { opacity: 1, delay: 0 }); // reset for next enterSite()
+
+    // Remove click listener so it doesn't stack
+    document.getElementById("scroll-label").style.pointerEvents = "none";
+}
+window.returnToIntro = returnToIntro;
 window.enterSite = enterSite;
 
 window.addEventListener("load", () => {
@@ -1322,10 +1356,10 @@ window.addEventListener("load", () => {
         ease: "power1.out",
     });
     gsap.fromTo(
-    "#enter-btn",
-    { opacity: 0, y: 20 },
-    { opacity: 1, y: 0, duration: 0.7, delay: 1.3, ease: "back.out(1.3)" }
-);
+        "#enter-btn",
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.7, delay: 1.3, ease: "back.out(1.3)" }
+    );
 });
 
 // ── CURSOR ─────────────────────────────────────────────────────────────────
