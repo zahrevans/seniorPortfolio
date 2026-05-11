@@ -1295,6 +1295,7 @@ function enterSite() {
         document.getElementById("projects-btn").classList.add("visible");
         applyTheme(MONTHS[0]);
     }, 1100);
+    
 }
 window.enterSite = enterSite;
 
@@ -1320,13 +1321,11 @@ window.addEventListener("load", () => {
         delay: 1.0,
         ease: "power1.out",
     });
-    gsap.from("#enter-btn", {
-        opacity: 0,
-        y: 20,
-        duration: 0.7,
-        delay: 1.3,
-        ease: "back.out(1.3)",
-    });
+    gsap.fromTo(
+    "#enter-btn",
+    { opacity: 0, y: 20 },
+    { opacity: 1, y: 0, duration: 0.7, delay: 1.3, ease: "back.out(1.3)" }
+);
 });
 
 // ── CURSOR ─────────────────────────────────────────────────────────────────
