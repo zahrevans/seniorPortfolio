@@ -315,7 +315,7 @@ const MONTHS = [
 const canvas3d = document.getElementById("three-canvas");
 const renderer = new THREE.WebGLRenderer({
     canvas: canvas3d,
-    antialias: false,
+    antialias: true,
     alpha: false,
     powerPreference: "high-performance",
 });
@@ -325,7 +325,8 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 // Disable expensive shadow maps
 renderer.shadowMap.enabled = false;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 1.0;
+renderer.toneMappingExposure = 1.05;
+renderer.outputEncoding = THREE.sRGBEncoding;
 
 const scene = new THREE.Scene();
 scene.fog = new THREE.FogExp2(0x0d1830, 0.018);
@@ -347,6 +348,318 @@ scene.add(sunLight);
 const fillLight = new THREE.PointLight(0x8cbeff, 1.2, 100);
 fillLight.position.set(-20, -5, 15);
 scene.add(fillLight);
+
+// ════════════════════════════════════════════════════════════════════════════
+// VISUAL UPGRADE LAYER — post-FX, env lighting, shader sky, atmosphere
+// ════════════════════════════════════════════════════════════════════════════
+
+// ── PROCEDURAL ENVIRONMENT MAP (for nice reflections on every metallic surf)
+const pmrem = new THREE.PMREMGenerator(renderer);
+pmrem.compileEquirectangularShader();
+function rebuildEnvMap(topHex, botHex) {
+    const c = document.createElement("canvas");
+    c.width = 256; c.height = 128;
+    const ctx = c.getContext("2d");
+    const g = ctx.createLinearGradient(0, 0, 0, 128);
+    g.addColorStop(0, topHex);
+    g.addColorStop(0.5, topHex);
+    g.addColorStop(1, botHex);
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, 256, 128);
+    // soft hot-spot for fake sun
+    const grd = ctx.createRadialGradient(180, 40, 0, 180, 40, 60);
+    grd.addColorStop(0, "rgba(255,255,255,0.9)");
+    grd.addColorStop(1, "rgba(255,255,255,0)");
+    ctx.fillStyle = grd;
+    ctx.fillRect(0, 0, 256, 128);
+    const tex = new THREE.CanvasTexture(c);
+    tex.mapping = THREE.EquirectangularReflectionMapping;
+    const env = pmrem.fromEquirectangular(tex).texture;
+    tex.dispose();
+    if (scene.environment) scene.environment.dispose();
+    scene.environment = env;
+}
+rebuildEnvMap("#0a1e3d", "#020d1f");
+
+// ── POST-PROCESSING: bloom + vignette/grain shader
+const composer = new THREE.EffectComposer(renderer);
+composer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+composer.setSize(window.innerWidth, window.innerHeight);
+
+const renderPass = new THREE.RenderPass(scene, camera);
+composer.addPass(renderPass);
+
+const bloomPass = new THREE.UnrealBloomPass(
+    new THREE.Vector2(window.innerWidth, window.innerHeight),
+    0.85,    // strength
+    0.6,     // radius
+    0.25,    // threshold — emissive surfaces will glow
+);
+composer.addPass(bloomPass);
+
+// Custom finishing pass: vignette + film grain + subtle color grade
+const FinishingShader = {
+    uniforms: {
+        tDiffuse: { value: null },
+        uTime: { value: 0 },
+        uVignette: { value: 1.15 },
+        uGrain: { value: 0.04 },
+        uTint: { value: new THREE.Color(0xffffff) },
+        uTintMix: { value: 0.0 },
+    },
+    vertexShader: `
+        varying vec2 vUv;
+        void main() {
+            vUv = uv;
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }`,
+    fragmentShader: `
+        uniform sampler2D tDiffuse;
+        uniform float uTime;
+        uniform float uVignette;
+        uniform float uGrain;
+        uniform vec3 uTint;
+        uniform float uTintMix;
+        varying vec2 vUv;
+        float rand(vec2 co) {
+            return fract(sin(dot(co.xy, vec2(12.9898, 78.233))) * 43758.5453);
+        }
+        void main() {
+            vec4 col = texture2D(tDiffuse, vUv);
+            // vignette
+            vec2 c = vUv - 0.5;
+            float v = 1.0 - dot(c, c) * uVignette;
+            v = clamp(v, 0.0, 1.0);
+            col.rgb *= mix(0.55, 1.0, v);
+            // film grain
+            float g = (rand(vUv + fract(uTime)) - 0.5) * uGrain;
+            col.rgb += g;
+            // color tint (per-month mood)
+            col.rgb = mix(col.rgb, col.rgb * uTint, uTintMix);
+            gl_FragColor = col;
+        }`,
+};
+const finishingPass = new THREE.ShaderPass(FinishingShader);
+finishingPass.renderToScreen = true;
+composer.addPass(finishingPass);
+
+// ── ATMOSPHERIC SHADER SKY (replaces flat vertex-color dome per month)
+// We keep buildSky() as a fallback, but inject a richer shader sky on top.
+const SkyShader = {
+    uniforms: {
+        uTime: { value: 0 },
+        uTop: { value: new THREE.Color(0x020d1f) },
+        uHorizon: { value: new THREE.Color(0x0a1e3d) },
+        uGround: { value: new THREE.Color(0x010305) },
+        uSunDir: { value: new THREE.Vector3(0.4, 0.25, -0.85).normalize() },
+        uSunColor: { value: new THREE.Color(0xffffff) },
+        uSunSize: { value: 0.985 },
+        uSunIntensity: { value: 1.2 },
+        uCloudiness: { value: 0.35 },
+        uCloudColor: { value: new THREE.Color(0xffffff) },
+    },
+    vertexShader: `
+        varying vec3 vWorldDir;
+        void main() {
+            vec4 wp = modelMatrix * vec4(position, 1.0);
+            vWorldDir = normalize(wp.xyz - cameraPosition);
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }`,
+    fragmentShader: `
+        uniform float uTime;
+        uniform vec3 uTop;
+        uniform vec3 uHorizon;
+        uniform vec3 uGround;
+        uniform vec3 uSunDir;
+        uniform vec3 uSunColor;
+        uniform float uSunSize;
+        uniform float uSunIntensity;
+        uniform float uCloudiness;
+        uniform vec3 uCloudColor;
+        varying vec3 vWorldDir;
+
+        // value noise
+        float hash(vec3 p) {
+            p = fract(p * 0.3183099 + 0.1);
+            p *= 17.0;
+            return fract(p.x * p.y * p.z * (p.x + p.y + p.z));
+        }
+        float noise(vec3 x) {
+            vec3 i = floor(x);
+            vec3 f = fract(x);
+            f = f * f * (3.0 - 2.0 * f);
+            return mix(mix(mix(hash(i+vec3(0,0,0)), hash(i+vec3(1,0,0)), f.x),
+                           mix(hash(i+vec3(0,1,0)), hash(i+vec3(1,1,0)), f.x), f.y),
+                       mix(mix(hash(i+vec3(0,0,1)), hash(i+vec3(1,0,1)), f.x),
+                           mix(hash(i+vec3(0,1,1)), hash(i+vec3(1,1,1)), f.x), f.y), f.z);
+        }
+        float fbm(vec3 p) {
+            float v = 0.0; float a = 0.5;
+            for (int i = 0; i < 4; i++) { v += a * noise(p); p *= 2.02; a *= 0.5; }
+            return v;
+        }
+
+        void main() {
+            vec3 dir = normalize(vWorldDir);
+            float h = dir.y; // -1 .. 1
+            // sky gradient: ground below horizon, then horizon->top
+            vec3 sky;
+            if (h < 0.0) {
+                sky = mix(uHorizon, uGround, clamp(-h * 1.5, 0.0, 1.0));
+            } else {
+                float t = pow(clamp(h, 0.0, 1.0), 0.55);
+                sky = mix(uHorizon, uTop, t);
+            }
+            // sun disk + soft halo
+            float sun = max(dot(dir, normalize(uSunDir)), 0.0);
+            float disk = smoothstep(uSunSize, uSunSize + 0.005, sun);
+            float halo = pow(sun, 8.0) * 0.35 + pow(sun, 32.0) * 0.6;
+            sky += uSunColor * (disk * uSunIntensity * 2.5 + halo * uSunIntensity);
+            // soft procedural clouds (only above horizon)
+            if (h > -0.05 && uCloudiness > 0.001) {
+                vec3 cp = dir / max(dir.y, 0.05);
+                float c = fbm(cp * 1.8 + vec3(uTime * 0.015, 0.0, uTime * 0.01));
+                c = smoothstep(0.55 - uCloudiness * 0.35, 0.85, c);
+                float fade = smoothstep(-0.05, 0.15, h);
+                sky = mix(sky, uCloudColor, c * uCloudiness * fade);
+            }
+            gl_FragColor = vec4(sky, 1.0);
+        }`,
+};
+
+const skyMat = new THREE.ShaderMaterial({
+    uniforms: THREE.UniformsUtils.clone(SkyShader.uniforms),
+    vertexShader: SkyShader.vertexShader,
+    fragmentShader: SkyShader.fragmentShader,
+    side: THREE.BackSide,
+    depthWrite: false,
+});
+const skyMesh = new THREE.Mesh(new THREE.SphereGeometry(300, 32, 16), skyMat);
+skyMesh.renderOrder = -1000;
+scene.add(skyMesh);
+
+// ── PER-MONTH SHADER SKY CONFIGS (procedural — no asset downloads)
+// Keys match the MONTHS index 0..11.
+const SKY_CONFIGS = [
+    { // JAN — cold dawn, soft clouds, moon-low sun
+        top: 0x05101f, horizon: 0x162a4a, ground: 0x010407,
+        sunDir: [-0.25, 0.18, -0.95], sunColor: 0xbcd6ff, sunSize: 0.992, sunI: 1.1,
+        cloudiness: 0.55, cloudColor: 0xb8c8e0, tint: 0xc8d8ff, tintMix: 0.18,
+        bloom: 1.0,
+    },
+    { // FEB — sunset rose
+        top: 0x180420, horizon: 0x6b1838, ground: 0x100208,
+        sunDir: [0.5, 0.08, -0.86], sunColor: 0xff6890, sunSize: 0.988, sunI: 1.6,
+        cloudiness: 0.35, cloudColor: 0xff9cb6, tint: 0xffb0c8, tintMix: 0.25,
+        bloom: 1.3,
+    },
+    { // MAR — fresh spring morning
+        top: 0x0d2a18, horizon: 0x4a7a3a, ground: 0x081208,
+        sunDir: [0.3, 0.4, -0.86], sunColor: 0xfff4c0, sunSize: 0.99, sunI: 1.4,
+        cloudiness: 0.5, cloudColor: 0xeaf6d8, tint: 0xd8ffd0, tintMix: 0.12,
+        bloom: 0.9,
+    },
+    { // APR — pink rain sky
+        top: 0x1f1428, horizon: 0x55304a, ground: 0x0c0814,
+        sunDir: [-0.4, 0.3, -0.85], sunColor: 0xffd0e8, sunSize: 0.993, sunI: 0.9,
+        cloudiness: 0.85, cloudColor: 0xc09ab8, tint: 0xeacde0, tintMix: 0.18,
+        bloom: 0.95,
+    },
+    { // MAY — wildflower golden hour
+        top: 0x1a2a1f, horizon: 0xc0884a, ground: 0x140e08,
+        sunDir: [0.6, 0.15, -0.78], sunColor: 0xffd380, sunSize: 0.985, sunI: 1.8,
+        cloudiness: 0.3, cloudColor: 0xfff0c8, tint: 0xffe0a8, tintMix: 0.22,
+        bloom: 1.1,
+    },
+    { // JUN — ocean blue, high sun
+        top: 0x081a4a, horizon: 0x4a90c8, ground: 0x041020,
+        sunDir: [0.2, 0.55, -0.82], sunColor: 0xfff8e0, sunSize: 0.988, sunI: 1.6,
+        cloudiness: 0.25, cloudColor: 0xffffff, tint: 0xd0e8ff, tintMix: 0.14,
+        bloom: 1.0,
+    },
+    { // JUL — fiery sunset / independence
+        top: 0x18051a, horizon: 0xc83820, ground: 0x100208,
+        sunDir: [-0.45, 0.1, -0.88], sunColor: 0xffa040, sunSize: 0.987, sunI: 1.9,
+        cloudiness: 0.4, cloudColor: 0xff8050, tint: 0xffb070, tintMix: 0.28,
+        bloom: 1.4,
+    },
+    { // AUG — desert mirage, bleached
+        top: 0x4a3818, horizon: 0xd89858, ground: 0x281408,
+        sunDir: [0.55, 0.25, -0.79], sunColor: 0xfff0c0, sunSize: 0.982, sunI: 2.0,
+        cloudiness: 0.1, cloudColor: 0xffe8c0, tint: 0xffd890, tintMix: 0.3,
+        bloom: 1.15,
+    },
+    { // SEP — harvest amber
+        top: 0x1a0d04, horizon: 0xa8581c, ground: 0x100604,
+        sunDir: [-0.35, 0.18, -0.92], sunColor: 0xffb060, sunSize: 0.988, sunI: 1.5,
+        cloudiness: 0.45, cloudColor: 0xd89058, tint: 0xffb878, tintMix: 0.25,
+        bloom: 1.2,
+    },
+    { // OCT — halloween dusk, dim
+        top: 0x100418, horizon: 0x3c1230, ground: 0x080208,
+        sunDir: [0.3, 0.05, -0.95], sunColor: 0xff6028, sunSize: 0.99, sunI: 1.0,
+        cloudiness: 0.65, cloudColor: 0x5a2848, tint: 0xb060a0, tintMix: 0.3,
+        bloom: 1.25,
+    },
+    { // NOV — fog / gratitude, muted
+        top: 0x1a1815, horizon: 0x6a5a48, ground: 0x100c08,
+        sunDir: [-0.2, 0.2, -0.96], sunColor: 0xffe8b8, sunSize: 0.995, sunI: 0.7,
+        cloudiness: 0.95, cloudColor: 0x9a8870, tint: 0xc8b898, tintMix: 0.22,
+        bloom: 0.85,
+    },
+    { // DEC — winter solstice deep blue
+        top: 0x020810, horizon: 0x0a3060, ground: 0x010305,
+        sunDir: [0.0, 0.08, -0.99], sunColor: 0xd0e8ff, sunSize: 0.993, sunI: 0.85,
+        cloudiness: 0.6, cloudColor: 0x6080a0, tint: 0xa0c0ff, tintMix: 0.2,
+        bloom: 1.1,
+    },
+];
+
+function applySkyConfig(idx) {
+    const cfg = SKY_CONFIGS[idx];
+    if (!cfg) return;
+    const u = skyMat.uniforms;
+    u.uTop.value.setHex(cfg.top);
+    u.uHorizon.value.setHex(cfg.horizon);
+    u.uGround.value.setHex(cfg.ground);
+    u.uSunDir.value.set(...cfg.sunDir).normalize();
+    u.uSunColor.value.setHex(cfg.sunColor);
+    u.uSunSize.value = cfg.sunSize;
+    u.uSunIntensity.value = cfg.sunI;
+    u.uCloudiness.value = cfg.cloudiness;
+    u.uCloudColor.value.setHex(cfg.cloudColor);
+    // post-fx tint
+    finishingPass.uniforms.uTint.value.setHex(cfg.tint);
+    finishingPass.uniforms.uTintMix.value = cfg.tintMix;
+    // bloom intensity per mood
+    bloomPass.strength = 0.7 * cfg.bloom;
+    // rebuild env map for reflections to match
+    const topHex = "#" + cfg.top.toString(16).padStart(6, "0");
+    const horHex = "#" + cfg.horizon.toString(16).padStart(6, "0");
+    rebuildEnvMap(topHex, horHex);
+}
+applySkyConfig(0);
+
+// ── BETTER PARTICLE TEXTURE (soft round dots instead of square pixels)
+const _particleCanvas = (() => {
+    const c = document.createElement("canvas");
+    c.width = 64; c.height = 64;
+    const ctx = c.getContext("2d");
+    const grd = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+    grd.addColorStop(0, "rgba(255,255,255,1)");
+    grd.addColorStop(0.4, "rgba(255,255,255,0.55)");
+    grd.addColorStop(1, "rgba(255,255,255,0)");
+    ctx.fillStyle = grd;
+    ctx.fillRect(0, 0, 64, 64);
+    const t = new THREE.CanvasTexture(c);
+    t.encoding = THREE.sRGBEncoding;
+    return t;
+})();
+
+// ════════════════════════════════════════════════════════════════════════════
+// END VISUAL UPGRADE LAYER
+// ════════════════════════════════════════════════════════════════════════════
+
 
 // ── HELPERS ────────────────────────────────────────────────────────────────
 function rr(a, b) {
@@ -389,12 +702,17 @@ function makePlane(w, h, sw = 1, sh = 1) {
 }
 
 // ── SKY BACKDROP ────────────────────────────────────────────────────────────
+// Note: kept for backward compatibility, but now blends very lightly over the
+// procedural shader sky so per-month color choices still tint scenes.
 function buildSky(g, c1, c2) {
-    const geo = new THREE.SphereGeometry(200, 16, 10);
+    const geo = new THREE.SphereGeometry(195, 16, 10);
     geo.scale(-1, 1, 1);
     const mat = new THREE.MeshBasicMaterial({
         vertexColors: true,
         side: THREE.BackSide,
+        transparent: true,
+        opacity: 0.0, // transparent — shader sky shows through
+        depthWrite: false,
     });
     const colors = [];
     const pos = geo.attributes.position;
@@ -443,13 +761,19 @@ function makeParticles(g, count, color, size, xr, yr, zr, userData) {
         "position",
         new THREE.Float32BufferAttribute(verts, 3),
     );
+    const isAdditive = userData && (userData.snowfall || userData.firefly || userData.spark);
     const pts = new THREE.Points(
         geo,
         new THREE.PointsMaterial({
             color,
-            size,
+            size: size * 1.4,
+            map: _particleCanvas,
             transparent: true,
-            opacity: 0.7,
+            opacity: 0.85,
+            depthWrite: false,
+            sizeAttenuation: true,
+            blending: isAdditive ? THREE.AdditiveBlending : THREE.NormalBlending,
+            alphaTest: 0.01,
         }),
     );
     if (userData) pts.userData = userData;
@@ -1446,6 +1770,8 @@ function applyTheme(m, idx) {
         .querySelectorAll(".nav-dot")
         .forEach((d, i) => d.classList.toggle("active", i === (idx ?? currentMonth)));
     updateMonthLabel(m.name, m.accentCSS);
+    // ── visual upgrade: swap shader sky + env map + post tint
+    applySkyConfig(idx ?? currentMonth);
 }
 
 // ── TRANSITION ─────────────────────────────────────────────────────────────
@@ -1609,7 +1935,7 @@ function returnToIntro() {
     gsap.fromTo("#intro-name", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, delay: 0.5, ease: "expo.out" });
     gsap.fromTo("#intro-title", { opacity: 0 }, { opacity: 1, duration: 0.8, delay: 0.85, ease: "power1.out" });
     gsap.fromTo("#intro-sub", { opacity: 0 }, { opacity: 1, duration: 0.8, delay: 1.05, ease: "power1.out" });
-    gsap.fromTo("#enter-btn", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7, delay: 1.25, ease: "back.out(1.3)" });
+    gsap.fromTo("#enter-btn, #about-btn", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7, delay: 1.25, ease: "back.out(1.3)", stagger: 0.08 });
 
     // Fade UI back in when intro is dismissed again
     gsap.set("#ui", { opacity: 1, delay: 0 }); // reset for next enterSite()
@@ -1643,9 +1969,9 @@ window.addEventListener("load", () => {
         ease: "power1.out",
     });
     gsap.fromTo(
-        "#enter-btn",
+        "#enter-btn, #about-btn",
         { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.7, delay: 1.3, ease: "back.out(1.3)" }
+        { opacity: 1, y: 0, duration: 0.7, delay: 1.3, ease: "back.out(1.3)", stagger: 0.08 }
     );
 });
 
@@ -1754,7 +2080,12 @@ function animate() {
     monthLabelEl.style.transform = `translate(-50%, calc(-50% + ${Math.sin(t * 0.4) * 5}px))`;
 
     sunLight.intensity = 1.7 + Math.sin(t * 0.6) * 0.3;
-    renderer.render(scene, camera);
+    // update shader uniforms
+    skyMat.uniforms.uTime.value = t;
+    finishingPass.uniforms.uTime.value = t;
+    // keep sky dome centred on camera so it never feels finite
+    skyMesh.position.copy(camera.position);
+    composer.render();
 }
 animate();
 
@@ -1763,4 +2094,5 @@ window.addEventListener("resize", () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
+    composer.setSize(window.innerWidth, window.innerHeight);
 });
