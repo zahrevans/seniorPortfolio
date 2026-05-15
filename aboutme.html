@@ -9,186 +9,9 @@
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Mono:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap"
       rel="stylesheet"
     />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        width: 100%;
-        min-height: 100%;
-        background: #000;
-        color: #fff;
-      }
-      body {
-        font-family: "Cormorant Garamond", serif;
-        padding: 80px 8vw 120px;
-        overflow-x: hidden;
-      }
-
-      /* Back link (top-left) */
-      .back-link {
-        position: fixed;
-        top: 32px;
-        left: 44px;
-        font-family: "Space Mono", monospace;
-        font-size: 13px;
-        letter-spacing: 0.35em;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.7);
-        text-decoration: none;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        padding: 14px 28px;
-        transition:
-          color 0.3s,
-          background 0.3s,
-          border-color 0.3s;
-        z-index: 10;
-        backdrop-filter: blur(4px);
-      }
-      .back-link:hover {
-        color: #fff;
-        background: rgba(255, 255, 255, 0.08);
-        border-color: rgba(255, 255, 255, 0.6);
-      }
-
-      /* Eyebrow + title */
-      .eyebrow {
-        font-family: "Space Mono", monospace;
-        font-size: 11px;
-        letter-spacing: 0.5em;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.4);
-        margin-top: 40px;
-        margin-bottom: 24px;
-      }
-      h1 {
-        font-family: "Bebas Neue", sans-serif;
-        font-size: clamp(70px, 12vw, 180px);
-        letter-spacing: 0.04em;
-        line-height: 0.95;
-        margin-bottom: 16px;
-      }
-      .subtitle {
-        font-family: "Cormorant Garamond", serif;
-        font-style: italic;
-        font-size: clamp(18px, 2vw, 24px);
-        letter-spacing: 0.18em;
-        color: rgba(255, 255, 255, 0.55);
-        text-transform: uppercase;
-        margin-bottom: 80px;
-      }
-
-      /* Two-column layout */
-      .grid {
-        display: grid;
-        grid-template-columns: 1fr 1.6fr;
-        gap: 80px;
-        max-width: 1200px;
-        margin-bottom: 100px;
-      }
-      @media (max-width: 800px) {
-        .grid {
-          grid-template-columns: 1fr;
-          gap: 40px;
-        }
-      }
-
-      .section-label {
-        font-family: "Space Mono", monospace;
-        font-size: 10px;
-        letter-spacing: 0.5em;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.35);
-        border-top: 1px solid rgba(255, 255, 255, 0.15);
-        padding-top: 18px;
-      }
-
-      .prose p {
-        font-family: "Cormorant Garamond", serif;
-        font-size: clamp(18px, 1.6vw, 22px);
-        line-height: 1.7;
-        color: rgba(255, 255, 255, 0.85);
-        margin-bottom: 22px;
-      }
-      .prose p:first-letter {
-        font-family: "Playfair Display", serif;
-        font-size: 1.8em;
-        font-weight: 700;
-        float: left;
-        line-height: 1;
-        padding-right: 10px;
-        padding-top: 4px;
-      }
-
-      /* Facts list */
-      .facts {
-        list-style: none;
-        max-width: 1200px;
-        margin-bottom: 100px;
-      }
-      .facts li {
-        display: grid;
-        grid-template-columns: 200px 1fr;
-        gap: 40px;
-        padding: 22px 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        font-family: "Cormorant Garamond", serif;
-        font-size: 20px;
-      }
-      .facts li:last-child {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      .facts .key {
-        font-family: "Space Mono", monospace;
-        font-size: 11px;
-        letter-spacing: 0.35em;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.4);
-        align-self: center;
-      }
-      .facts .val {
-        color: rgba(255, 255, 255, 0.9);
-      }
-      @media (max-width: 600px) {
-        .facts li {
-          grid-template-columns: 1fr;
-          gap: 6px;
-        }
-      }
-
-      /* Footer / contact */
-      .contact {
-        max-width: 1200px;
-        padding-top: 60px;
-        border-top: 1px solid rgba(255, 255, 255, 0.15);
-      }
-      .contact h2 {
-        font-family: "Bebas Neue", sans-serif;
-        font-size: clamp(40px, 6vw, 80px);
-        letter-spacing: 0.05em;
-        margin-bottom: 24px;
-      }
-      .contact a {
-        display: inline-block;
-        margin-right: 30px;
-        font-family: "Space Mono", monospace;
-        font-size: 13px;
-        letter-spacing: 0.3em;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.7);
-        text-decoration: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-        padding-bottom: 4px;
-        transition: color 0.3s, border-color 0.3s;
-      }
-      .contact a:hover {
-        color: #fff;
-        border-color: #fff;
-      }
-    </style>
+    <link rel="stylesheet" href="about.css" />
+  
+  
   </head>
   <body>
     <a href="index.html" class="back-link">← Back</a>
@@ -201,15 +24,15 @@
       <div class="section-label">Introduction</div>
       <div class="prose">
         <p>
-          I'm a senior designer drawn to the space between code and craft.
-          My work lives at intersections — typography and motion, archive
-          and invention, the formal and the felt.
+          I'm a senior designer drawn to the space between code and craft. My
+          work lives at intersections — typography and motion, archive and
+          invention, the formal and the felt.
         </p>
         <p>
           This portfolio is a year in twelve chapters: a calendar of work,
-          process, and the slow accumulation of small obsessions. Replace
-          this copy with your own story — where you grew up, what pulled
-          you into this discipline, what you're chasing now.
+          process, and the slow accumulation of small obsessions. Replace this
+          copy with your own story — where you grew up, what pulled you into
+          this discipline, what you're chasing now.
         </p>
       </div>
     </div>
@@ -229,7 +52,9 @@
       </li>
       <li>
         <span class="key">Tools</span>
-        <span class="val">Figma · After Effects · Three.js · GSAP · pen on paper</span>
+        <span class="val"
+          >Figma · After Effects · Three.js · GSAP · pen on paper</span
+        >
       </li>
       <li>
         <span class="key">Currently</span>
@@ -240,8 +65,12 @@
     <div class="contact">
       <h2>Let's Talk.</h2>
       <a href="mailto:hello@example.com">Email</a>
-      <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://instagram.com/" target="_blank" rel="noopener"
+        >Instagram</a
+      >
+      <a href="https://linkedin.com/" target="_blank" rel="noopener"
+        >LinkedIn</a
+      >
       <a href="#">Resume PDF</a>
     </div>
   </body>
