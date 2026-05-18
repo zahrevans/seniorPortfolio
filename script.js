@@ -14,18 +14,17 @@ const MONTHS = [
         accentHex: 0x8cbeff,
         accentCSS: "#8cbeff",
         uiMuted: "rgba(140,190,255,0.35)",
-        projects: [
-            {
-                tag: "REACT / THREE.JS",
-                title: "Aurora Dashboard",
-                desc: "Real-time data visualization with particle-based rendering and animated WebGL charts.",
-            },
-            {
-                tag: "NEXT.JS / API",
-                title: "Frost Commerce",
-                desc: "E-commerce platform built for winter seasonal drops with serverless checkout flows.",
-            },
-        ],
+        projects: {
+            sophomore: [
+                // { tag: "REACT / THREE.JS", title: "Aurora Dashboard", desc: "Real-time data visualization with particle-based rendering." },
+            ],
+            junior: [
+                // { tag: "NEXT.JS / API", title: "Frost Commerce", desc: "E-commerce platform built for winter seasonal drops." },
+            ],
+            senior: [
+                // { tag: "THREE.JS", title: "Crystal World", desc: "Interactive snow globe renderer." },
+            ],
+        },
         camFrom: { x: 0, y: 40, z: 40 },
     },
     {
@@ -40,13 +39,11 @@ const MONTHS = [
         accentHex: 0xff648c,
         accentCSS: "#ff648c",
         uiMuted: "rgba(255,100,140,0.35)",
-        projects: [
-            {
-                tag: "SVELTE / GSAP",
-                title: "Bloom UI Kit",
-                desc: "Animated component library with rose-petal micro-interactions and spring physics.",
-            },
-        ],
+        projects: {
+            sophomore: [],
+            junior: [],
+            senior: [],
+        },
         camFrom: { x: -50, y: 0, z: 20 },
     },
     {
@@ -61,18 +58,11 @@ const MONTHS = [
         accentHex: 0x78e664,
         accentCSS: "#78e664",
         uiMuted: "rgba(120,230,100,0.35)",
-        projects: [
-            {
-                tag: "WEBGL / SHADER",
-                title: "Pollen Viz",
-                desc: "GPU-powered particle field simulating pollen dispersal using custom GLSL shaders.",
-            },
-            {
-                tag: "NODE / EXPRESS",
-                title: "Garden API",
-                desc: "REST API for plant tracking with ML-powered growth prediction endpoints.",
-            },
-        ],
+        projects: {
+            sophomore: [],
+            junior: [],
+            senior: [],
+        },
         camFrom: { x: 50, y: 0, z: 20 },
     },
     {
@@ -87,13 +77,11 @@ const MONTHS = [
         accentHex: 0xffaac8,
         accentCSS: "#ffaac8",
         uiMuted: "rgba(255,170,200,0.35)",
-        projects: [
-            {
-                tag: "REACT / P5.JS",
-                title: "Rain Garden",
-                desc: "Generative art piece using perlin noise to simulate rainfall on a canvas petal field.",
-            },
-        ],
+        projects: {
+            sophomore: [],
+            junior: [],
+            senior: [],
+        },
         camFrom: { x: -35, y: -35, z: 30 },
     },
     {
@@ -108,18 +96,11 @@ const MONTHS = [
         accentHex: 0xffdc3c,
         accentCSS: "#ffdc3c",
         uiMuted: "rgba(255,220,60,0.35)",
-        projects: [
-            {
-                tag: "VUE / D3",
-                title: "Field Data",
-                desc: "Interactive botanical dataset explorer with SVG-based bloom visualizations.",
-            },
-            {
-                tag: "TYPESCRIPT",
-                title: "Meadow CMS",
-                desc: "Headless content system built for nature photography publications.",
-            },
-        ],
+        projects: {
+            sophomore: [],
+            junior: [],
+            senior: [],
+        },
         camFrom: { x: 0, y: -50, z: 30 },
     },
     {
@@ -134,23 +115,11 @@ const MONTHS = [
         accentHex: 0x28beff,
         accentCSS: "#28beff",
         uiMuted: "rgba(40,190,255,0.35)",
-        projects: [
-            {
-                tag: "THREE.JS / WATER",
-                title: "Tide Renderer",
-                desc: "Real-time ocean simulation using GPU vertex displacement and foam particle systems.",
-            },
-            {
-                tag: "REACT NATIVE",
-                title: "Shore App",
-                desc: "Surf forecast mobile application with tidal animation and geolocation features.",
-            },
-            {
-                tag: "WEBGL",
-                title: "Reef Explorer",
-                desc: "Underwater WebGL experience for marine biology education.",
-            },
-        ],
+        projects: {
+            sophomore: [],
+            junior: [],
+            senior: [],
+        },
         camFrom: { x: 50, y: 25, z: 20 },
     },
     {
@@ -165,18 +134,11 @@ const MONTHS = [
         accentHex: 0xff641e,
         accentCSS: "#ff641e",
         uiMuted: "rgba(255,100,30,0.35)",
-        projects: [
-            {
-                tag: "WEBGL / PARTICLES",
-                title: "Ember Engine",
-                desc: "Real-time fire particle simulation with heat-distortion post-processing effects.",
-            },
-            {
-                tag: "CANVAS API",
-                title: "Spark Draw",
-                desc: "Interactive firework canvas tool with physics-based trajectory simulation.",
-            },
-        ],
+        projects: {
+            sophomore: [],
+            junior: [],
+            senior: [],
+        },
         camFrom: { x: 0, y: 0, z: 80 },
     },
     {
@@ -191,18 +153,11 @@ const MONTHS = [
         accentHex: 0xffa528,
         accentCSS: "#ffa528",
         uiMuted: "rgba(255,165,40,0.35)",
-        projects: [
-            {
-                tag: "SHADER / GLSL",
-                title: "Mirage Post",
-                desc: "Heat shimmer post-processing filter using custom fragment shaders and UV distortion.",
-            },
-            {
-                tag: "THREE.JS",
-                title: "Dune World",
-                desc: "Procedural terrain generator with wind erosion simulation and LOD optimization.",
-            },
-        ],
+        projects: {
+            sophomore: [],
+            junior: [],
+            senior: [],
+        },
         camFrom: { x: -50, y: 25, z: 20 },
     },
     {
@@ -217,13 +172,11 @@ const MONTHS = [
         accentHex: 0xff8c28,
         accentCSS: "#ff8c28",
         uiMuted: "rgba(255,140,40,0.35)",
-        projects: [
-            {
-                tag: "REACT / FRAMER",
-                title: "Harvest Journal",
-                desc: "Editorial-style blog platform with leaf-fall scroll animations and amber color theming.",
-            },
-        ],
+        projects: {
+            sophomore: [],
+            junior: [],
+            senior: [],
+        },
         camFrom: { x: 50, y: -25, z: 25 },
     },
     {
@@ -238,23 +191,11 @@ const MONTHS = [
         accentHex: 0xa03cff,
         accentCSS: "#a03cff",
         uiMuted: "rgba(160,60,255,0.35)",
-        projects: [
-            {
-                tag: "THREE.JS / HORROR",
-                title: "Haunt Experience",
-                desc: "Immersive WebGL horror experience with procedural shadow casting and audio sync.",
-            },
-            {
-                tag: "CANVAS / AUDIO",
-                title: "Spectral Synth",
-                desc: "Audio visualizer using FFT analysis mapped to ghostly particle formations.",
-            },
-            {
-                tag: "NEXT.JS",
-                title: "Midnight Market",
-                desc: "Dark-mode e-commerce experience for Halloween merchandise with cart animations.",
-            },
-        ],
+        projects: {
+            sophomore: [],
+            junior: [],
+            senior: [],
+        },
         camFrom: { x: -50, y: -25, z: 25 },
     },
     {
@@ -269,18 +210,11 @@ const MONTHS = [
         accentHex: 0xa0b4c8,
         accentCSS: "#a0b4c8",
         uiMuted: "rgba(160,180,200,0.3)",
-        projects: [
-            {
-                tag: "GSAP / SVG",
-                title: "Fog Motion",
-                desc: "Atmospheric SVG animation library for moody, minimal storytelling sites.",
-            },
-            {
-                tag: "TYPESCRIPT / API",
-                title: "Gratitude Log",
-                desc: "Minimalist journaling application with emotion-tracking and weekly reflection summaries.",
-            },
-        ],
+        projects: {
+            sophomore: [],
+            junior: [],
+            senior: [],
+        },
         camFrom: { x: 0, y: 0, z: -10 },
     },
     {
@@ -295,18 +229,11 @@ const MONTHS = [
         accentHex: 0x78c8ff,
         accentCSS: "#78c8ff",
         uiMuted: "rgba(120,200,255,0.35)",
-        projects: [
-            {
-                tag: "THREE.JS / SNOW",
-                title: "Crystal World",
-                desc: "Interactive snow globe renderer with physics-based snowflake accumulation and refraction.",
-            },
-            {
-                tag: "REACT / LOTTIE",
-                title: "Advent Calendar",
-                desc: "24-door animated advent calendar with daily interactive WebGL surprises.",
-            },
-        ],
+        projects: {
+            sophomore: [],
+            junior: [],
+            senior: [],
+        },
         camFrom: { x: 35, y: 35, z: 40 },
     },
 ];
@@ -319,10 +246,8 @@ const renderer = new THREE.WebGLRenderer({
     alpha: false,
     powerPreference: "high-performance",
 });
-// Cap pixel ratio at 1.5 for performance
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
 renderer.setSize(window.innerWidth, window.innerHeight);
-// Disable expensive shadow maps
 renderer.shadowMap.enabled = false;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
 renderer.toneMappingExposure = 1.05;
@@ -339,7 +264,6 @@ const camera = new THREE.PerspectiveCamera(
 );
 camera.position.set(0, 2, 28);
 
-// Lights — simplified, no shadow casting
 const ambLight = new THREE.AmbientLight(0xffffff, 0.4);
 scene.add(ambLight);
 const sunLight = new THREE.DirectionalLight(0xffffff, 1.6);
@@ -349,11 +273,7 @@ const fillLight = new THREE.PointLight(0x8cbeff, 1.2, 100);
 fillLight.position.set(-20, -5, 15);
 scene.add(fillLight);
 
-// ════════════════════════════════════════════════════════════════════════════
-// VISUAL UPGRADE LAYER — post-FX, env lighting, shader sky, atmosphere
-// ════════════════════════════════════════════════════════════════════════════
-
-// ── PROCEDURAL ENVIRONMENT MAP (for nice reflections on every metallic surf)
+// ── PROCEDURAL ENVIRONMENT MAP
 const pmrem = new THREE.PMREMGenerator(renderer);
 pmrem.compileEquirectangularShader();
 function rebuildEnvMap(topHex, botHex) {
@@ -366,7 +286,6 @@ function rebuildEnvMap(topHex, botHex) {
     g.addColorStop(1, botHex);
     ctx.fillStyle = g;
     ctx.fillRect(0, 0, 256, 128);
-    // soft hot-spot for fake sun
     const grd = ctx.createRadialGradient(180, 40, 0, 180, 40, 60);
     grd.addColorStop(0, "rgba(255,255,255,0.9)");
     grd.addColorStop(1, "rgba(255,255,255,0)");
@@ -381,7 +300,7 @@ function rebuildEnvMap(topHex, botHex) {
 }
 rebuildEnvMap("#0a1e3d", "#020d1f");
 
-// ── POST-PROCESSING: bloom + vignette/grain shader
+// ── POST-PROCESSING
 const composer = new THREE.EffectComposer(renderer);
 composer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
 composer.setSize(window.innerWidth, window.innerHeight);
@@ -391,13 +310,10 @@ composer.addPass(renderPass);
 
 const bloomPass = new THREE.UnrealBloomPass(
     new THREE.Vector2(window.innerWidth, window.innerHeight),
-    0.85,    // strength
-    0.6,     // radius
-    0.25,    // threshold — emissive surfaces will glow
+    0.85, 0.6, 0.25,
 );
 composer.addPass(bloomPass);
 
-// Custom finishing pass: vignette + film grain + subtle color grade
 const FinishingShader = {
     uniforms: {
         tDiffuse: { value: null },
@@ -426,15 +342,12 @@ const FinishingShader = {
         }
         void main() {
             vec4 col = texture2D(tDiffuse, vUv);
-            // vignette
             vec2 c = vUv - 0.5;
             float v = 1.0 - dot(c, c) * uVignette;
             v = clamp(v, 0.0, 1.0);
             col.rgb *= mix(0.55, 1.0, v);
-            // film grain
             float g = (rand(vUv + fract(uTime)) - 0.5) * uGrain;
             col.rgb += g;
-            // color tint (per-month mood)
             col.rgb = mix(col.rgb, col.rgb * uTint, uTintMix);
             gl_FragColor = col;
         }`,
@@ -443,8 +356,7 @@ const finishingPass = new THREE.ShaderPass(FinishingShader);
 finishingPass.renderToScreen = true;
 composer.addPass(finishingPass);
 
-// ── ATMOSPHERIC SHADER SKY (replaces flat vertex-color dome per month)
-// We keep buildSky() as a fallback, but inject a richer shader sky on top.
+// ── ATMOSPHERIC SHADER SKY
 const SkyShader = {
     uniforms: {
         uTime: { value: 0 },
@@ -478,7 +390,6 @@ const SkyShader = {
         uniform vec3 uCloudColor;
         varying vec3 vWorldDir;
 
-        // value noise
         float hash(vec3 p) {
             p = fract(p * 0.3183099 + 0.1);
             p *= 17.0;
@@ -501,8 +412,7 @@ const SkyShader = {
 
         void main() {
             vec3 dir = normalize(vWorldDir);
-            float h = dir.y; // -1 .. 1
-            // sky gradient: ground below horizon, then horizon->top
+            float h = dir.y;
             vec3 sky;
             if (h < 0.0) {
                 sky = mix(uHorizon, uGround, clamp(-h * 1.5, 0.0, 1.0));
@@ -510,12 +420,10 @@ const SkyShader = {
                 float t = pow(clamp(h, 0.0, 1.0), 0.55);
                 sky = mix(uHorizon, uTop, t);
             }
-            // sun disk + soft halo
             float sun = max(dot(dir, normalize(uSunDir)), 0.0);
             float disk = smoothstep(uSunSize, uSunSize + 0.005, sun);
             float halo = pow(sun, 8.0) * 0.35 + pow(sun, 32.0) * 0.6;
             sky += uSunColor * (disk * uSunIntensity * 2.5 + halo * uSunIntensity);
-            // soft procedural clouds (only above horizon)
             if (h > -0.05 && uCloudiness > 0.001) {
                 vec3 cp = dir / max(dir.y, 0.05);
                 float c = fbm(cp * 1.8 + vec3(uTime * 0.015, 0.0, uTime * 0.01));
@@ -538,81 +446,19 @@ const skyMesh = new THREE.Mesh(new THREE.SphereGeometry(300, 32, 16), skyMat);
 skyMesh.renderOrder = -1000;
 scene.add(skyMesh);
 
-// ── PER-MONTH SHADER SKY CONFIGS (procedural — no asset downloads)
-// Keys match the MONTHS index 0..11.
 const SKY_CONFIGS = [
-    { // JAN — cold dawn, soft clouds, moon-low sun
-        top: 0x05101f, horizon: 0x162a4a, ground: 0x010407,
-        sunDir: [-0.25, 0.18, -0.95], sunColor: 0xbcd6ff, sunSize: 0.992, sunI: 0.85,
-        cloudiness: 0.55, cloudColor: 0xb8c8e0, tint: 0xc8d8ff, tintMix: 0.18,
-        bloom: 0.8,
-    },
-    { // FEB — sunset rose
-        top: 0x180420, horizon: 0x6b1838, ground: 0x100208,
-        sunDir: [0.5, 0.08, -0.86], sunColor: 0xff6890, sunSize: 0.988, sunI: 1.0,
-        cloudiness: 0.35, cloudColor: 0xff9cb6, tint: 0xffb0c8, tintMix: 0.25,
-        bloom: 0.95,
-    },
-    { // MAR — fresh spring morning
-        top: 0x0d2a18, horizon: 0x4a7a3a, ground: 0x081208,
-        sunDir: [0.3, 0.4, -0.86], sunColor: 0xfff4c0, sunSize: 0.99, sunI: 0.5,
-        cloudiness: 0.5, cloudColor: 0xeaf6d8, tint: 0xd8ffd0, tintMix: 0.12,
-        bloom: 0.45,
-    },
-    { // APR — pink rain sky
-        top: 0x1f1428, horizon: 0x55304a, ground: 0x0c0814,
-        sunDir: [-0.4, 0.3, -0.85], sunColor: 0xffd0e8, sunSize: 0.993, sunI: 0.4,
-        cloudiness: 0.85, cloudColor: 0xc09ab8, tint: 0xeacde0, tintMix: 0.18,
-        bloom: 0.5,
-    },
-    { // MAY — wildflower golden hour
-        top: 0x1a2a1f, horizon: 0xc0884a, ground: 0x140e08,
-        sunDir: [0.6, 0.15, -0.78], sunColor: 0xffd380, sunSize: 0.985, sunI: 0.6,
-        cloudiness: 0.3, cloudColor: 0xfff0c8, tint: 0xffe0a8, tintMix: 0.22,
-        bloom: 0.55,
-    },
-    { // JUN — ocean blue, high sun
-        top: 0x081a4a, horizon: 0x4a90c8, ground: 0x041020,
-        sunDir: [0.2, 0.55, -0.82], sunColor: 0xfff8e0, sunSize: 0.988, sunI: 1.0,
-        cloudiness: 0.25, cloudColor: 0xffffff, tint: 0xd0e8ff, tintMix: 0.14,
-        bloom: 0.8,
-    },
-    { // JUL — fiery sunset / independence
-        top: 0x18051a, horizon: 0xc83820, ground: 0x100208,
-        sunDir: [-0.45, 0.1, -0.88], sunColor: 0xffa040, sunSize: 0.987, sunI: 0.6,
-        cloudiness: 0.4, cloudColor: 0xff8050, tint: 0xffb070, tintMix: 0.28,
-        bloom: 0.6,
-    },
-    { // AUG — desert mirage, bleached
-        top: 0x4a3818, horizon: 0xd89858, ground: 0x281408,
-        sunDir: [0.55, 0.25, -0.79], sunColor: 0xfff0c0, sunSize: 0.982, sunI: 0.8,
-        cloudiness: 0.1, cloudColor: 0xffe8c0, tint: 0xffd890, tintMix: 0.3,
-        bloom: 0.7,
-    },
-    { // SEP — harvest amber
-        top: 0x1a0d04, horizon: 0xa8581c, ground: 0x100604,
-        sunDir: [-0.35, 0.18, -0.92], sunColor: 0xffb060, sunSize: 0.988, sunI: 1.3,
-        cloudiness: 0.45, cloudColor: 0xd89058, tint: 0xffb878, tintMix: 0.25,
-        bloom: 1.05,
-    },
-    { // OCT — halloween dusk, dim
-        top: 0x100418, horizon: 0x3c1230, ground: 0x080208,
-        sunDir: [0.3, 0.05, -0.95], sunColor: 0xff6028, sunSize: 0.99, sunI: 1.0,
-        cloudiness: 0.65, cloudColor: 0x5a2848, tint: 0xb060a0, tintMix: 0.3,
-        bloom: 1.25,
-    },
-    { // NOV — fog / gratitude, muted
-        top: 0x1a1815, horizon: 0x6a5a48, ground: 0x100c08,
-        sunDir: [-0.2, 0.2, -0.96], sunColor: 0xffe8b8, sunSize: 0.995, sunI: 0.7,
-        cloudiness: 0.95, cloudColor: 0x9a8870, tint: 0xc8b898, tintMix: 0.22,
-        bloom: 0.85,
-    },
-    { // DEC — winter solstice deep blue
-        top: 0x020810, horizon: 0x0a3060, ground: 0x010305,
-        sunDir: [0.0, 0.08, -0.99], sunColor: 0xd0e8ff, sunSize: 0.993, sunI: 0.7,
-        cloudiness: 0.6, cloudColor: 0x6080a0, tint: 0xa0c0ff, tintMix: 0.2,
-        bloom: 0.9,
-    },
+    { top: 0x05101f, horizon: 0x162a4a, ground: 0x010407, sunDir: [-0.25, 0.18, -0.95], sunColor: 0xbcd6ff, sunSize: 0.992, sunI: 0.85, cloudiness: 0.55, cloudColor: 0xb8c8e0, tint: 0xc8d8ff, tintMix: 0.18, bloom: 0.8 },
+    { top: 0x180420, horizon: 0x6b1838, ground: 0x100208, sunDir: [0.5, 0.08, -0.86], sunColor: 0xff6890, sunSize: 0.988, sunI: 1.0, cloudiness: 0.35, cloudColor: 0xff9cb6, tint: 0xffb0c8, tintMix: 0.25, bloom: 0.95 },
+    { top: 0x0d2a18, horizon: 0x4a7a3a, ground: 0x081208, sunDir: [0.3, 0.4, -0.86], sunColor: 0xfff4c0, sunSize: 0.99, sunI: 0.5, cloudiness: 0.5, cloudColor: 0xeaf6d8, tint: 0xd8ffd0, tintMix: 0.12, bloom: 0.45 },
+    { top: 0x1f1428, horizon: 0x55304a, ground: 0x0c0814, sunDir: [-0.4, 0.3, -0.85], sunColor: 0xffd0e8, sunSize: 0.993, sunI: 0.4, cloudiness: 0.85, cloudColor: 0xc09ab8, tint: 0xeacde0, tintMix: 0.18, bloom: 0.5 },
+    { top: 0x1a2a1f, horizon: 0xc0884a, ground: 0x140e08, sunDir: [0.6, 0.15, -0.78], sunColor: 0xffd380, sunSize: 0.985, sunI: 0.6, cloudiness: 0.3, cloudColor: 0xfff0c8, tint: 0xffe0a8, tintMix: 0.22, bloom: 0.55 },
+    { top: 0x081a4a, horizon: 0x4a90c8, ground: 0x041020, sunDir: [0.2, 0.55, -0.82], sunColor: 0xfff8e0, sunSize: 0.988, sunI: 1.0, cloudiness: 0.25, cloudColor: 0xffffff, tint: 0xd0e8ff, tintMix: 0.14, bloom: 0.8 },
+    { top: 0x18051a, horizon: 0xc83820, ground: 0x100208, sunDir: [-0.45, 0.1, -0.88], sunColor: 0xffa040, sunSize: 0.987, sunI: 0.6, cloudiness: 0.4, cloudColor: 0xff8050, tint: 0xffb070, tintMix: 0.28, bloom: 0.6 },
+    { top: 0x4a3818, horizon: 0xd89858, ground: 0x281408, sunDir: [0.55, 0.25, -0.79], sunColor: 0xfff0c0, sunSize: 0.982, sunI: 0.8, cloudiness: 0.1, cloudColor: 0xffe8c0, tint: 0xffd890, tintMix: 0.3, bloom: 0.7 },
+    { top: 0x1a0d04, horizon: 0xa8581c, ground: 0x100604, sunDir: [-0.35, 0.18, -0.92], sunColor: 0xffb060, sunSize: 0.988, sunI: 1.3, cloudiness: 0.45, cloudColor: 0xd89058, tint: 0xffb878, tintMix: 0.25, bloom: 1.05 },
+    { top: 0x100418, horizon: 0x3c1230, ground: 0x080208, sunDir: [0.3, 0.05, -0.95], sunColor: 0xff6028, sunSize: 0.99, sunI: 1.0, cloudiness: 0.65, cloudColor: 0x5a2848, tint: 0xb060a0, tintMix: 0.3, bloom: 1.25 },
+    { top: 0x1a1815, horizon: 0x6a5a48, ground: 0x100c08, sunDir: [-0.2, 0.2, -0.96], sunColor: 0xffe8b8, sunSize: 0.995, sunI: 0.7, cloudiness: 0.95, cloudColor: 0x9a8870, tint: 0xc8b898, tintMix: 0.22, bloom: 0.85 },
+    { top: 0x020810, horizon: 0x0a3060, ground: 0x010305, sunDir: [0.0, 0.08, -0.99], sunColor: 0xd0e8ff, sunSize: 0.993, sunI: 0.7, cloudiness: 0.6, cloudColor: 0x6080a0, tint: 0xa0c0ff, tintMix: 0.2, bloom: 0.9 },
 ];
 
 function applySkyConfig(idx) {
@@ -628,19 +474,16 @@ function applySkyConfig(idx) {
     u.uSunIntensity.value = cfg.sunI;
     u.uCloudiness.value = cfg.cloudiness;
     u.uCloudColor.value.setHex(cfg.cloudColor);
-    // post-fx tint
     finishingPass.uniforms.uTint.value.setHex(cfg.tint);
     finishingPass.uniforms.uTintMix.value = cfg.tintMix;
-    // bloom intensity per mood
     bloomPass.strength = 0.7 * cfg.bloom;
-    // rebuild env map for reflections to match
     const topHex = "#" + cfg.top.toString(16).padStart(6, "0");
     const horHex = "#" + cfg.horizon.toString(16).padStart(6, "0");
     rebuildEnvMap(topHex, horHex);
 }
 applySkyConfig(0);
 
-// ── BETTER PARTICLE TEXTURE (soft round dots instead of square pixels)
+// ── BETTER PARTICLE TEXTURE
 const _particleCanvas = (() => {
     const c = document.createElement("canvas");
     c.width = 64; c.height = 64;
@@ -656,15 +499,8 @@ const _particleCanvas = (() => {
     return t;
 })();
 
-// ════════════════════════════════════════════════════════════════════════════
-// END VISUAL UPGRADE LAYER
-// ════════════════════════════════════════════════════════════════════════════
-
-
-// ── HELPERS ────────────────────────────────────────────────────────────────
-function rr(a, b) {
-    return a + Math.random() * (b - a);
-}
+// ── HELPERS
+function rr(a, b) { return a + Math.random() * (b - a); }
 function makeMat(color, opts = {}) {
     return new THREE.MeshStandardMaterial({
         color,
@@ -673,51 +509,26 @@ function makeMat(color, opts = {}) {
         transparent: !!(opts.op || opts.op === 0),
         opacity: opts.op !== undefined ? opts.op : 1,
         side: opts.double ? THREE.DoubleSide : THREE.FrontSide,
-        emissive: opts.emit
-            ? new THREE.Color(opts.emit)
-            : new THREE.Color(0x000000),
+        emissive: opts.emit ? new THREE.Color(opts.emit) : new THREE.Color(0x000000),
         emissiveIntensity: opts.emitI || 0,
     });
 }
-function makeSphere(r, d = 8) {
-    return new THREE.SphereGeometry(r, d, d);
-}
-function makeBox(w, h, d) {
-    return new THREE.BoxGeometry(w, h, d);
-}
-function makeCone(r, h, s = 7) {
-    return new THREE.ConeGeometry(r, h, s);
-}
-function makeCyl(rt, rb, h, s = 8) {
-    return new THREE.CylinderGeometry(rt, rb, h, s);
-}
-function makeTorus(r, t, rs = 8, ts = 24) {
-    return new THREE.TorusGeometry(r, t, rs, ts);
-}
-function makeOcta(r) {
-    return new THREE.OctahedronGeometry(r);
-}
-function makePlane(w, h, sw = 1, sh = 1) {
-    return new THREE.PlaneGeometry(w, h, sw, sh);
-}
+function makeSphere(r, d = 8) { return new THREE.SphereGeometry(r, d, d); }
+function makeBox(w, h, d) { return new THREE.BoxGeometry(w, h, d); }
+function makeCone(r, h, s = 7) { return new THREE.ConeGeometry(r, h, s); }
+function makeCyl(rt, rb, h, s = 8) { return new THREE.CylinderGeometry(rt, rb, h, s); }
+function makeTorus(r, t, rs = 8, ts = 24) { return new THREE.TorusGeometry(r, t, rs, ts); }
+function makeOcta(r) { return new THREE.OctahedronGeometry(r); }
+function makePlane(w, h, sw = 1, sh = 1) { return new THREE.PlaneGeometry(w, h, sw, sh); }
 
-// ── SKY BACKDROP ────────────────────────────────────────────────────────────
-// Note: kept for backward compatibility, but now blends very lightly over the
-// procedural shader sky so per-month color choices still tint scenes.
+// ── SKY BACKDROP
 function buildSky(g, c1, c2) {
     const geo = new THREE.SphereGeometry(195, 16, 10);
     geo.scale(-1, 1, 1);
-    const mat = new THREE.MeshBasicMaterial({
-        vertexColors: true,
-        side: THREE.BackSide,
-        transparent: true,
-        opacity: 0.0, // transparent — shader sky shows through
-        depthWrite: false,
-    });
+    const mat = new THREE.MeshBasicMaterial({ vertexColors: true, side: THREE.BackSide, transparent: true, opacity: 0.0, depthWrite: false });
     const colors = [];
     const pos = geo.attributes.position;
-    const col1 = new THREE.Color(c1),
-        col2 = new THREE.Color(c2);
+    const col1 = new THREE.Color(c1), col2 = new THREE.Color(c2);
     for (let i = 0; i < pos.count; i++) {
         const y = (pos.getY(i) + 200) / 400;
         const c = col1.clone().lerp(col2, Math.max(0, Math.min(1, y)));
@@ -727,21 +538,14 @@ function buildSky(g, c1, c2) {
     g.add(new THREE.Mesh(geo, mat));
 }
 
-// ── TERRAIN ────────────────────────────────────────────────────────────────
+// ── TERRAIN
 function buildTerrain(g, color, roughness = 0.95) {
     const geo = new THREE.PlaneGeometry(200, 120, 40, 20);
     geo.rotateX(-Math.PI / 2);
     const pos = geo.attributes.position;
     for (let i = 0; i < pos.count; i++) {
-        const x = pos.getX(i),
-            z = pos.getZ(i);
-        pos.setY(
-            i,
-            Math.sin(x * 0.05) * 2 +
-            Math.sin(z * 0.08) * 1.5 +
-            Math.sin(x * 0.12 + z * 0.09) * 1 -
-            5,
-        );
+        const x = pos.getX(i), z = pos.getZ(i);
+        pos.setY(i, Math.sin(x * 0.05) * 2 + Math.sin(z * 0.08) * 1.5 + Math.sin(x * 0.12 + z * 0.09) * 1 - 5);
     }
     pos.needsUpdate = true;
     geo.computeVertexNormals();
@@ -751,39 +555,25 @@ function buildTerrain(g, color, roughness = 0.95) {
     return mesh;
 }
 
-// ── PARTICLE HELPER (reusable) ──────────────────────────────────────────────
+// ── PARTICLE HELPER
 function makeParticles(g, count, color, size, xr, yr, zr, userData) {
     const geo = new THREE.BufferGeometry();
     const verts = [];
     for (let i = 0; i < count; i++)
         verts.push(rr(xr[0], xr[1]), rr(yr[0], yr[1]), rr(zr[0], zr[1]));
-    geo.setAttribute(
-        "position",
-        new THREE.Float32BufferAttribute(verts, 3),
-    );
+    geo.setAttribute("position", new THREE.Float32BufferAttribute(verts, 3));
     const isAdditive = userData && (userData.snowfall || userData.firefly || userData.spark);
-    const pts = new THREE.Points(
-        geo,
-        new THREE.PointsMaterial({
-            color,
-            size: size * 1.4,
-            map: _particleCanvas,
-            transparent: true,
-            opacity: 0.85,
-            depthWrite: false,
-            sizeAttenuation: true,
-            blending: isAdditive ? THREE.AdditiveBlending : THREE.NormalBlending,
-            alphaTest: 0.01,
-        }),
-    );
+    const pts = new THREE.Points(geo, new THREE.PointsMaterial({
+        color, size: size * 1.4, map: _particleCanvas, transparent: true, opacity: 0.85,
+        depthWrite: false, sizeAttenuation: true,
+        blending: isAdditive ? THREE.AdditiveBlending : THREE.NormalBlending, alphaTest: 0.01,
+    }));
     if (userData) pts.userData = userData;
     g.add(pts);
     return pts;
 }
 
-// ── SCENE OBJECT HELPERS ──────────────────────────────────────────────────
-
-// Bare branching tree: trunk + 3 angled branches + 3 twigs each
+// ── SCENE OBJECT HELPERS
 function _bareTree(g, x, z, h, col) {
     const mat = makeMat(col, { r: 0.95 });
     const trunk = new THREE.Mesh(makeCyl(0.06, 0.2, h, 7), mat);
@@ -813,7 +603,6 @@ function _bareTree(g, x, z, h, col) {
     }
 }
 
-// Layered fir / pine tree with optional snow caps
 function _firTree(g, x, y, z, h, col, snow) {
     const trunkH = h * 0.3;
     const trunk = new THREE.Mesh(makeCyl(0.1, 0.22, trunkH, 7), makeMat(0x3a1f0a, { r: 0.95 }));
@@ -835,7 +624,6 @@ function _firTree(g, x, y, z, h, col, snow) {
     }
 }
 
-// Deciduous tree: trunk + multi-blob canopy
 function _leafTree(g, x, z, h, canopyCol, trunkCol) {
     const trunk = new THREE.Mesh(makeCyl(0.1, 0.22, h, 7), makeMat(trunkCol || 0x4a2a0a, { r: 0.95 }));
     trunk.position.set(x, -8 + h / 2, z);
@@ -850,7 +638,6 @@ function _leafTree(g, x, z, h, canopyCol, trunkCol) {
     }
 }
 
-// Cherry tree: trunk + angled branches + blossom cloud
 function _cherryTree(g, x, z, h, col) {
     const mat = makeMat(0x3d1a0a, { r: 0.9 });
     const trunk = new THREE.Mesh(makeCyl(0.1, 0.22, h, 7), mat);
@@ -874,7 +661,6 @@ function _cherryTree(g, x, z, h, col) {
     }
 }
 
-// Palm tree: segmented curving trunk + drooping leaf planes + coconuts
 function _palmTree(g, x, z, lean) {
     const h = rr(5, 8);
     const segs = 7;
@@ -902,7 +688,6 @@ function _palmTree(g, x, z, lean) {
     }
 }
 
-// Saguaro cactus: ribbed body + bent arms
 function _cactus(g, x, z, h) {
     const mat = makeMat(0x2a6622, { r: 0.82 });
     const body = new THREE.Mesh(makeCyl(0.2, 0.3, h, 9), mat);
@@ -923,7 +708,6 @@ function _cactus(g, x, z, h) {
     }
 }
 
-// Pumpkin: 3 lobes + stem + inner glow + point light
 function _pumpkin(g, x, z) {
     const s = rr(0.7, 1.4);
     for (let p = -1; p <= 1; p++) {
@@ -943,7 +727,6 @@ function _pumpkin(g, x, z) {
     g.add(pl);
 }
 
-// Star field: random points scattered in a sphere shell
 function _stars(g, count, radius, size) {
     const verts = [];
     for (let i = 0; i < count; i++) {
@@ -957,13 +740,10 @@ function _stars(g, count, radius, size) {
     g.add(new THREE.Points(geo, new THREE.PointsMaterial({ color: 0xffffff, size: size || 0.5, transparent: true, opacity: 0.7 })));
 }
 
-// ── MONTH SCENE BUILDERS ───────────────────────────────────────────────────
-
+// ── MONTH SCENE BUILDERS (unchanged from original)
 function buildJanuary(g) {
     buildSky(g, "#010810", "#061530");
     _stars(g, 180, 160, 0.55);
-
-    // Sculpted snowy terrain
     const geo = new THREE.PlaneGeometry(200, 120, 48, 28);
     geo.rotateX(-Math.PI / 2);
     const pos = geo.attributes.position;
@@ -974,14 +754,10 @@ function buildJanuary(g) {
     pos.needsUpdate = true;
     geo.computeVertexNormals();
     g.add(new THREE.Mesh(geo, makeMat(0xb8d0e8, { r: 0.82 })));
-
-    // Snow cover plane
     const snowPlane = new THREE.Mesh(makePlane(200, 120), makeMat(0xeef5ff, { r: 1.0, op: 0.72 }));
     snowPlane.rotation.x = -Math.PI / 2;
     snowPlane.position.y = -5.6;
     g.add(snowPlane);
-
-    // Moon with glow halo
     const moon = new THREE.Mesh(makeSphere(5.5, 20), makeMat(0xeef5ff, { r: 0.8, emit: 0xaaccff, emitI: 0.45 }));
     moon.position.set(-20, 28, -88);
     g.add(moon);
@@ -992,13 +768,9 @@ function buildJanuary(g) {
     const moonLight = new THREE.PointLight(0x8ab4ff, 2.0, 130);
     moonLight.position.copy(moon.position);
     g.add(moonLight);
-
-    // Bare branching trees — varied depths
     [[-26, -7], [-16, -13], [-6, -20], [6, -17], [18, -11], [29, -7], [22, -16], [-20, -22], [11, -9], [-4, -26]].forEach(([x, z]) => {
         _bareTree(g, x, z, rr(4, 9), 0x263444);
     });
-
-    // Spinning ice crystals
     for (let i = 0; i < 20; i++) {
         const s = rr(0.15, 1.1);
         const crystal = new THREE.Mesh(makeOcta(s), makeMat(0xaad4ff, { m: 0.85, r: 0.05, op: rr(0.5, 0.85) }));
@@ -1007,8 +779,6 @@ function buildJanuary(g) {
         crystal.userData.spin = { y: rr(0.003, 0.009), x: rr(0.001, 0.004) };
         g.add(crystal);
     }
-
-    // Distant snowy mountains
     for (let m = 0; m < 5; m++) {
         const mtn = new THREE.Mesh(makeCone(rr(9, 20), rr(20, 32), 6), makeMat(0x0c1e3a, { r: 0.95 }));
         mtn.position.set(rr(-65, 65), -6, rr(-105, -55));
@@ -1017,8 +787,6 @@ function buildJanuary(g) {
         cap.position.set(mtn.position.x, mtn.position.y + rr(9, 15), mtn.position.z);
         g.add(cap);
     }
-
-    // Icicles hanging in foreground
     for (let ic = 0; ic < 14; ic++) {
         const ilen = rr(0.4, 1.5);
         const icicle = new THREE.Mesh(makeCone(0.05, ilen, 5), makeMat(0xbbddff, { m: 0.8, r: 0.04, op: 0.75 }));
@@ -1026,8 +794,6 @@ function buildJanuary(g) {
         icicle.position.set(rr(-22, 22), rr(1, 5), rr(-14, -3));
         g.add(icicle);
     }
-
-    // Two-layer snowfall
     makeParticles(g, 420, 0xddeeff, 0.13, [-55, 55], [-14, 30], [-55, 12], { snowfall: true });
     makeParticles(g, 70, 0xffffff, 0.26, [-28, 28], [-10, 15], [-20, 8], { snowfall: true });
 }
@@ -1036,8 +802,6 @@ function buildFebruary(g) {
     buildSky(g, "#0d020e", "#200510");
     buildTerrain(g, 0x3d1020, 0.9);
     _stars(g, 100, 155, 0.45);
-
-    // Deep-magenta glowing orb sun
     const sun = new THREE.Mesh(makeSphere(6.5, 18), makeMat(0xff2255, { r: 0.6, emit: 0xff1144, emitI: 0.55 }));
     sun.position.set(12, 20, -78);
     g.add(sun);
@@ -1050,8 +814,6 @@ function buildFebruary(g) {
     const sunLight = new THREE.PointLight(0xff2255, 2.5, 200);
     sunLight.position.copy(sun.position);
     g.add(sunLight);
-
-    // 3D heart shapes: two sphere lobes + inverted cone tip
     for (let i = 0; i < 18; i++) {
         const s = rr(0.18, 0.75);
         const hcols = [0xcc1133, 0xff3355, 0xff6688, 0xee0044, 0xff99bb];
@@ -1069,8 +831,6 @@ function buildFebruary(g) {
         tip.userData.float = { ys: rr(0.003, 0.009), p: Math.random() * Math.PI * 2 };
         g.add(tip);
     }
-
-    // Rose stems with multi-layer petal blooms
     for (let fl = 0; fl < 14; fl++) {
         const fx = rr(-36, 36), fz = rr(-26, 0);
         const sh = rr(1.5, 3.5);
@@ -1095,8 +855,6 @@ function buildFebruary(g) {
             }
         }
     }
-
-    // Drifting petals
     for (let i = 0; i < 55; i++) {
         const petal = new THREE.Mesh(new THREE.CircleGeometry(rr(0.08, 0.35), 5), makeMat([0xff4466, 0xdd1133, 0xff8899][Math.floor(Math.random() * 3)], { op: 0.65, double: true }));
         petal.position.set(rr(-38, 38), rr(-14, 18), rr(-32, 6));
@@ -1108,8 +866,6 @@ function buildFebruary(g) {
 
 function buildMarch(g) {
     buildSky(g, "#041008", "#0c2010");
-
-    // Rolling spring terrain
     const geo = new THREE.PlaneGeometry(200, 120, 48, 28);
     geo.rotateX(-Math.PI / 2);
     const pos = geo.attributes.position;
@@ -1120,8 +876,6 @@ function buildMarch(g) {
     pos.needsUpdate = true;
     geo.computeVertexNormals();
     g.add(new THREE.Mesh(geo, makeMat(0x2a6020, { r: 0.9 })));
-
-    // Bright spring sun with corona rings
     const sun = new THREE.Mesh(makeSphere(8, 20), makeMat(0xffee88, { r: 0.4, emit: 0xffdd44, emitI: 0.65 }));
     sun.position.set(22, 34, -90);
     g.add(sun);
@@ -1133,8 +887,6 @@ function buildMarch(g) {
     const sunLt = new THREE.PointLight(0xffee88, 2.2, 240);
     sunLt.position.copy(sun.position);
     g.add(sunLt);
-
-    // Flowers: stem + individual petals + center
     for (let i = 0; i < 30; i++) {
         const cx = rr(-36, 36), cz = rr(-28, 2);
         const sh = rr(0.6, 2.0);
@@ -1157,16 +909,10 @@ function buildMarch(g) {
         ctr.position.set(cx, -5.5 + sh - 1.8, cz);
         g.add(ctr);
     }
-
-    // Pollen dust particles
     makeParticles(g, 280, 0xffee88, 0.065, [-55, 55], [-8, 22], [-45, 10], null);
-
-    // Background leaf trees
     for (let i = 0; i < 8; i++) {
         _leafTree(g, rr(-42, 42), rr(-30, -10), rr(4, 8), 0x2a8830, 0x3a1f0a);
     }
-
-    // Fluffy clouds
     for (let c = 0; c < 4; c++) {
         const cx = rr(-38, 38), cy = rr(10, 20), cz2 = rr(-65, -22);
         for (let b = 0; b < 5; b++) {
@@ -1182,21 +928,15 @@ function buildApril(g) {
     buildSky(g, "#0c0614", "#18101e");
     buildTerrain(g, 0x1a0f24, 0.9);
     _stars(g, 80, 150, 0.4);
-
-    // Purple moon
     const moon = new THREE.Mesh(makeSphere(5, 18), makeMat(0xddbbff, { r: 0.7, emit: 0xaa88dd, emitI: 0.28 }));
     moon.position.set(18, 26, -80);
     g.add(moon);
     const moonGlow = new THREE.PointLight(0xaa88dd, 1.5, 100);
     moonGlow.position.copy(moon.position);
     g.add(moonGlow);
-
-    // Detailed cherry trees at varied positions
     [[-22, -6], [-8, -14], [6, -10], [20, -7], [-14, -20], [12, -22]].forEach(([x, z]) => {
         _cherryTree(g, x, z, rr(5, 9), 0xffb8cc);
     });
-
-    // Angled rain streaks
     for (let i = 0; i < 75; i++) {
         const rl = rr(0.8, 2.0);
         const rain = new THREE.Mesh(makeCyl(0.004, 0.004, rl, 3), makeMat(0x8899cc, { op: rr(0.12, 0.22) }));
@@ -1206,16 +946,12 @@ function buildApril(g) {
         rain.userData.rain = true;
         g.add(rain);
     }
-
-    // Ground puddles
     for (let p = 0; p < 7; p++) {
         const puddle = new THREE.Mesh(new THREE.CircleGeometry(rr(0.7, 2.2), 10), makeMat(0x3344aa, { m: 0.9, r: 0.05, op: 0.32 }));
         puddle.rotation.x = -Math.PI / 2;
         puddle.position.set(rr(-28, 28), -7.6, rr(-20, 2));
         g.add(puddle);
     }
-
-    // Dense blossom petal storm
     for (let i = 0; i < 90; i++) {
         const petal = new THREE.Mesh(new THREE.CircleGeometry(rr(0.07, 0.36), 4), makeMat([0xffb8cc, 0xffaabb, 0xff99bb, 0xffddee][Math.floor(Math.random() * 4)], { op: 0.7, double: true }));
         petal.position.set(rr(-40, 40), rr(-12, 20), rr(-32, 6));
@@ -1227,8 +963,6 @@ function buildApril(g) {
 
 function buildMay(g) {
     buildSky(g, "#0e0c00", "#1e1800");
-
-    // Undulating meadow
     const geo = new THREE.PlaneGeometry(200, 120, 48, 28);
     geo.rotateX(-Math.PI / 2);
     const pos = geo.attributes.position;
@@ -1239,16 +973,12 @@ function buildMay(g) {
     pos.needsUpdate = true;
     geo.computeVertexNormals();
     g.add(new THREE.Mesh(geo, makeMat(0x3a6818, { r: 0.88 })));
-
-    // Bright sun
     const sun = new THREE.Mesh(makeSphere(9, 20), makeMat(0xffee44, { r: 0.4, emit: 0xffcc00, emitI: 0.65 }));
     sun.position.set(18, 36, -90);
     g.add(sun);
     const sunLt2 = new THREE.PointLight(0xffee44, 2.0, 240);
     sunLt2.position.copy(sun.position);
     g.add(sunLt2);
-
-    // Dense wildflowers: stem + petals + center
     for (let i = 0; i < 65; i++) {
         const flCols = [0xffcc00, 0xff8800, 0xff3366, 0xaa55ff, 0x22bbff, 0xffffff, 0xff6644, 0xffaacc];
         const fc = flCols[Math.floor(Math.random() * flCols.length)];
@@ -1271,8 +1001,6 @@ function buildMay(g) {
         ctr.position.set(bx, -5.5 + sh - 1.8, bz);
         g.add(ctr);
     }
-
-    // Fluffy multi-sphere clouds
     for (let c = 0; c < 5; c++) {
         const cx = rr(-38, 38), cy = rr(10, 20), cz2 = rr(-65, -22);
         for (let b = 0; b < 6; b++) {
@@ -1282,8 +1010,6 @@ function buildMay(g) {
             g.add(cloud);
         }
     }
-
-    // Edge trees
     for (let i = 0; i < 6; i++) {
         _leafTree(g, rr(-44, 44), rr(-30, -12), rr(4, 7), 0x44aa22, 0x3a1f0a);
     }
@@ -1292,8 +1018,6 @@ function buildMay(g) {
 function buildJune(g) {
     buildSky(g, "#000d1a", "#011828");
     _stars(g, 90, 150, 0.42);
-
-    // Animated ocean plane
     const waveGeo = new THREE.PlaneGeometry(200, 90, 24, 16);
     waveGeo.rotateX(-Math.PI / 2);
     const waveMat = new THREE.MeshStandardMaterial({ color: 0x005588, metalness: 0.7, roughness: 0.1, transparent: true, opacity: 0.9 });
@@ -1301,8 +1025,6 @@ function buildJune(g) {
     wave.position.y = -6;
     wave.userData.ocean = true;
     g.add(wave);
-
-    // Sandy beach with subtle dune bumps
     const beachGeo = new THREE.PlaneGeometry(200, 45, 18, 8);
     beachGeo.rotateX(-Math.PI / 2);
     const bp = beachGeo.attributes.position;
@@ -1312,21 +1034,15 @@ function buildJune(g) {
     const beach = new THREE.Mesh(beachGeo, makeMat(0xddbb88, { r: 0.98 }));
     beach.position.set(0, -7.5, 22);
     g.add(beach);
-
-    // Large sunset orb low on horizon
     const sun = new THREE.Mesh(makeSphere(10, 20), makeMat(0xff7733, { r: 0.35, emit: 0xff5511, emitI: 0.55 }));
     sun.position.set(0, 8, -90);
     g.add(sun);
     const sunLt3 = new THREE.PointLight(0xff6633, 2.8, 200);
     sunLt3.position.copy(sun.position);
     g.add(sunLt3);
-
-    // 4 palm trees with lean variation
-    [[-18, 16], [-5, 14], [9, 18], [22, 13]].forEach(([px, pz], i) => {
+    [[-18, 16], [-5, 14], [9, 18], [22, 13]].forEach(([px, pz]) => {
         _palmTree(g, px, pz, rr(-0.5, 0.5));
     });
-
-    // Seagull V-shapes
     for (let s = 0; s < 12; s++) {
         const geo2 = new THREE.BufferGeometry();
         geo2.setAttribute('position', new THREE.Float32BufferAttribute([0, 0, 0, -0.65, 0.22, 0, 0.65, 0.22, 0], 3));
@@ -1337,8 +1053,6 @@ function buildJune(g) {
         bird.userData.float = { ys: rr(0.006, 0.012), p: Math.random() * Math.PI * 2, drift: rr(0.002, 0.006) };
         g.add(bird);
     }
-
-    // Sea foam bubbles
     for (let i = 0; i < 35; i++) {
         const b = new THREE.Mesh(makeSphere(rr(0.05, 0.28), 6), makeMat(0x88ddff, { m: 0.8, r: 0.0, op: 0.2 }));
         b.position.set(rr(-30, 30), rr(-8, 6), rr(-30, 5));
@@ -1350,8 +1064,6 @@ function buildJune(g) {
 function buildJuly(g) {
     buildSky(g, "#0e0200", "#1e0400");
     buildTerrain(g, 0x1a0800, 0.95);
-
-    // Multiple firework bursts: glowing core + radial sparks + point light
     const burstCols = [
         [0xff4400, 0xff8800], [0xffdd00, 0xff9900], [0xff0044, 0xff4488],
         [0x00ccff, 0x0088ff], [0xffffff, 0xffeecc], [0x44ff00, 0x88ff44], [0xff44ff, 0xaa00ff],
@@ -1374,7 +1086,6 @@ function buildJuly(g) {
             spark.userData.float = { ys: rr(0.008, 0.022), p: Math.random() * Math.PI * 2 };
             g.add(spark);
         }
-        // Trail streaks
         for (let t = 0; t < 6; t++) {
             const ta = Math.random() * Math.PI * 2;
             const tr = rr(0.5, 3.2);
@@ -1384,12 +1095,8 @@ function buildJuly(g) {
             g.add(trail);
         }
     }
-
-    // Rising embers + outer glow particles
     makeParticles(g, 500, 0xff8833, 0.08, [-60, 60], [0, 35], [-60, -5], null);
     makeParticles(g, 120, 0xffdd44, 0.11, [-40, 40], [0, 25], [-45, -5], null);
-
-    // City silhouette — varied-height dark boxes with glowing windows
     for (let b = 0; b < 20; b++) {
         const bh = rr(4, 14), bw = rr(1.5, 4);
         const building = new THREE.Mesh(makeBox(bw, bh, rr(1.5, 3)), makeMat(0x0d0400, { r: 0.98 }));
@@ -1405,8 +1112,6 @@ function buildJuly(g) {
 
 function buildAugust(g) {
     buildSky(g, "#120800", "#201200");
-
-    // Dramatic sand dunes with sharp ridges
     const duneGeo = new THREE.PlaneGeometry(200, 120, 48, 32);
     duneGeo.rotateX(-Math.PI / 2);
     const dpos = duneGeo.attributes.position;
@@ -1417,8 +1122,6 @@ function buildAugust(g) {
     dpos.needsUpdate = true;
     duneGeo.computeVertexNormals();
     g.add(new THREE.Mesh(duneGeo, makeMat(0xc88030, { r: 0.98 })));
-
-    // Massive blazing sun with corona rings
     const sun = new THREE.Mesh(makeSphere(14, 22), makeMat(0xffaa22, { r: 0.25, emit: 0xff8800, emitI: 0.95 }));
     sun.position.set(0, 32, -90);
     g.add(sun);
@@ -1430,29 +1133,21 @@ function buildAugust(g) {
     const sunHeat = new THREE.PointLight(0xff8822, 4.0, 280);
     sunHeat.position.copy(sun.position);
     g.add(sunHeat);
-
-    // Detailed cacti
     [[-28, -8], [-14, -18], [0, -12], [16, -20], [28, -9], [-20, -24], [10, -6], [-5, -4]].forEach(([cx, cz]) => {
         _cactus(g, cx, cz, rr(2.5, 6));
     });
-
-    // Desert rocks — flattened spheres
     for (let r = 0; r < 14; r++) {
         const rock = new THREE.Mesh(makeSphere(rr(0.4, 1.8), 7), makeMat(0x8a6020, { r: 0.98 }));
         rock.scale.y = rr(0.3, 0.6);
         rock.position.set(rr(-38, 38), -7, rr(-28, 0));
         g.add(rock);
     }
-
-    // Heat shimmer planes
     for (let h = 0; h < 14; h++) {
         const shimmer = new THREE.Mesh(makePlane(rr(2, 8), rr(4, 9), 1, 4), makeMat(0xffaa44, { op: rr(0.02, 0.055), r: 1.0, double: true }));
         shimmer.position.set(rr(-40, 40), rr(-4, 4), rr(-35, -5));
         shimmer.userData.float = { ys: rr(0.001, 0.003), p: Math.random() * Math.PI * 2 };
         g.add(shimmer);
     }
-
-    // Circling vulture silhouettes
     for (let v = 0; v < 5; v++) {
         const a = (v / 5) * Math.PI * 2;
         const vgeo = new THREE.BufferGeometry();
@@ -1469,8 +1164,6 @@ function buildAugust(g) {
 function buildSeptember(g) {
     buildSky(g, "#100600", "#1e0e00");
     _stars(g, 70, 148, 0.4);
-
-    // Warm amber terrain
     const geo = new THREE.PlaneGeometry(200, 120, 44, 26);
     geo.rotateX(-Math.PI / 2);
     const pos = geo.attributes.position;
@@ -1481,23 +1174,16 @@ function buildSeptember(g) {
     pos.needsUpdate = true;
     geo.computeVertexNormals();
     g.add(new THREE.Mesh(geo, makeMat(0x4a2808, { r: 0.92 })));
-
-    // Harvest moon — large and warm
     const moon = new THREE.Mesh(makeSphere(8, 20), makeMat(0xff9944, { r: 0.5, emit: 0xff7722, emitI: 0.38 }));
     moon.position.set(20, 24, -88);
     g.add(moon);
     const moonLt = new THREE.PointLight(0xff8833, 2.5, 180);
     moonLt.position.copy(moon.position);
     g.add(moonLt);
-
     const leafCols = [0xcc4400, 0xdd6600, 0xee8800, 0xff4400, 0xaa3300, 0xdd9900, 0xff6600];
-
-    // Detailed autumn trees with multi-blob canopies
     [[-26, -8], [-12, -14], [0, -20], [14, -12], [26, -7], [-18, -22], [10, -24]].forEach(([tx, tz]) => {
         _leafTree(g, tx, tz, rr(5, 10), leafCols[Math.floor(Math.random() * leafCols.length)], 0x4a2a0a);
     });
-
-    // Dense falling leaves — varied sizes and rotations
     for (let i = 0; i < 110; i++) {
         const lc = leafCols[Math.floor(Math.random() * leafCols.length)];
         const leaf = new THREE.Mesh(new THREE.CircleGeometry(rr(0.1, 0.4), 5), makeMat(lc, { op: rr(0.75, 0.95), double: true }));
@@ -1507,16 +1193,12 @@ function buildSeptember(g) {
         leaf.userData.leaf = { ys: rr(0.002, 0.008), p: Math.random() * Math.PI * 2, drift: rr(-0.009, 0.009), spin: rr(0.004, 0.018) };
         g.add(leaf);
     }
-
-    // Hay bales — cylinders on side
     for (let h = 0; h < 5; h++) {
         const bale = new THREE.Mesh(makeCyl(0.8, 0.8, 1.4, 10), makeMat(0xddaa44, { r: 0.95 }));
         bale.rotation.z = Math.PI / 2;
         bale.position.set(rr(-28, 28), -7, rr(-18, -2));
         g.add(bale);
     }
-
-    // Pumpkins on the ground
     for (let p = 0; p < 4; p++) {
         _pumpkin(g, rr(-22, 22), rr(-14, -2));
     }
@@ -1526,8 +1208,6 @@ function buildOctober(g) {
     buildSky(g, "#03000a", "#080015");
     buildTerrain(g, 0x0a0018, 0.95);
     _stars(g, 120, 150, 0.45);
-
-    // Eerie moon with sharp halo
     const moon = new THREE.Mesh(makeSphere(6.5, 20), makeMat(0xddcc88, { r: 0.65, emit: 0xbbaa66, emitI: 0.28 }));
     moon.position.set(-10, 24, -75);
     g.add(moon);
@@ -1538,13 +1218,9 @@ function buildOctober(g) {
     const moonLt2 = new THREE.PointLight(0x8866cc, 2.2, 120);
     moonLt2.position.copy(moon.position);
     g.add(moonLt2);
-
-    // Gnarled bare trees with full branching
     for (let i = 0; i < 10; i++) {
         _bareTree(g, rr(-40, 40), rr(-30, -2), rr(5, 12), 0x0a0a10);
     }
-
-    // Bats: body box + wing triangles
     for (let i = 0; i < 16; i++) {
         const bx = rr(-24, 24), by = rr(-2, 14), bz = rr(-25, 3);
         const body = new THREE.Mesh(makeBox(0.28, 0.13, 0.1), makeMat(0x0d0a1a, { r: 0.85 }));
@@ -1562,19 +1238,13 @@ function buildOctober(g) {
             g.add(wm);
         }
     }
-
-    // Detailed pumpkins with glow
     [[-14, -4], [0, -8], [10, -3], [-6, -14], [18, -10]].forEach(([px, pz]) => _pumpkin(g, px, pz));
-
-    // Purple ghost orbs
     for (let i = 0; i < 28; i++) {
         const orb = new THREE.Mesh(makeSphere(rr(0.08, 0.5), 6), makeMat([0x8800ff, 0x6600cc, 0xaa44ff, 0x440088][Math.floor(Math.random() * 4)], { m: 0.85, r: 0.05, op: rr(0.3, 0.65), emit: 0x6600cc, emitI: 0.55 }));
         orb.position.set(rr(-30, 30), rr(-6, 14), rr(-28, 4));
         orb.userData.float = { ys: rr(0.004, 0.012), p: Math.random() * Math.PI * 2 };
         g.add(orb);
     }
-
-    // Spiderweb rings
     for (let ring = 1; ring <= 4; ring++) {
         const web = new THREE.Mesh(makeTorus(ring * 1.1, 0.016, 4, 14), makeMat(0xaaaacc, { op: 0.18, r: 0.5 }));
         web.position.set(-10, 8, -6);
@@ -1585,8 +1255,6 @@ function buildOctober(g) {
 
 function buildNovember(g) {
     buildSky(g, "#060708", "#0e1012");
-
-    // Dark heavy terrain
     const geo = new THREE.PlaneGeometry(200, 120, 38, 22);
     geo.rotateX(-Math.PI / 2);
     const pos = geo.attributes.position;
@@ -1596,21 +1264,15 @@ function buildNovember(g) {
     pos.needsUpdate = true;
     geo.computeVertexNormals();
     g.add(new THREE.Mesh(geo, makeMat(0x111418, { r: 0.97 })));
-
-    // Layered fog volumes at different depths
     for (let i = 0; i < 22; i++) {
         const fog = new THREE.Mesh(makeSphere(rr(4, 10), 7), makeMat(0x8899aa, { op: rr(0.022, 0.048), r: 1.0 }));
         fog.position.set(rr(-35, 35), rr(-7, 5), rr(-35, 6));
         fog.userData.float = { ys: rr(0.0005, 0.002), p: Math.random() * Math.PI * 2, drift: 0.0008 };
         g.add(fog);
     }
-
-    // Dense bare forest
     for (let i = 0; i < 18; i++) {
         _bareTree(g, rr(-42, 42), rr(-34, -2), rr(3, 9), 0x1c1c22);
     }
-
-    // Street lamp: post + arm + glowing orb
     const post = new THREE.Mesh(makeCyl(0.055, 0.08, 7, 6), makeMat(0x2a2a30, { r: 0.7, m: 0.5 }));
     post.position.set(0, -8 + 3.5, 5);
     g.add(post);
@@ -1624,16 +1286,12 @@ function buildNovember(g) {
     const lampLight = new THREE.PointLight(0xffaa44, 3.5, 22);
     lampLight.position.copy(lampHead.position);
     g.add(lampLight);
-
-    // Wet ground puddles reflecting lamp
     for (let p = 0; p < 6; p++) {
         const puddle = new THREE.Mesh(new THREE.CircleGeometry(rr(0.5, 2.0), 10), makeMat(0x334455, { m: 0.9, r: 0.05, op: 0.38 }));
         puddle.rotation.x = -Math.PI / 2;
         puddle.position.set(rr(-15, 15), -6.1, rr(-8, 8));
         g.add(puddle);
     }
-
-    // Crow silhouettes on branches
     for (let c = 0; c < 8; c++) {
         const crow = new THREE.Mesh(makeSphere(0.14, 5), makeMat(0x050508, { r: 0.9 }));
         crow.position.set(rr(-28, 28), rr(-2, 8), rr(-26, -3));
@@ -1644,8 +1302,6 @@ function buildNovember(g) {
 function buildDecember(g) {
     buildSky(g, "#000818", "#020f28");
     _stars(g, 200, 160, 0.55);
-
-    // Deep snowy terrain with large drifts
     const geo = new THREE.PlaneGeometry(200, 120, 48, 30);
     geo.rotateX(-Math.PI / 2);
     const pos = geo.attributes.position;
@@ -1660,8 +1316,6 @@ function buildDecember(g) {
     snowPlane2.rotation.x = -Math.PI / 2;
     snowPlane2.position.y = -5.5;
     g.add(snowPlane2);
-
-    // Aurora borealis — wavy planes at varying colours
     const auroraCols = [0x00ff88, 0x0088ff, 0xff44aa, 0x44ffcc, 0x88ff00];
     for (let i = 0; i < 8; i++) {
         const aGeo = new THREE.PlaneGeometry(rr(30, 60), rr(10, 22), 12, 5);
@@ -1674,13 +1328,9 @@ function buildDecember(g) {
         aurora.userData.float = { ys: rr(0.0008, 0.002), p: Math.random() * Math.PI * 2 };
         g.add(aurora);
     }
-
-    // Fir trees — foreground + mid + back layers, with snow caps
     [[0, -7.8, 9], [-12, -7.8, 3], [14, -7.8, 5], [-24, -7.8, -4], [22, -7.8, -6], [-6, -7.8, -12], [30, -7.8, 1], [-32, -7.8, 2]].forEach(([tx, ty, tz]) => {
         _firTree(g, tx, ty, tz, rr(3, 8), 0x1a5220, true);
     });
-
-    // Christmas star on the centre tree
     const star = new THREE.Mesh(makeOcta(1.6), makeMat(0xffffaa, { m: 1.0, r: 0.0, emit: 0xffee66, emitI: 2.5 }));
     star.position.set(0, 6, 9);
     star.userData.spin = { y: 0.018, x: 0.009 };
@@ -1688,8 +1338,6 @@ function buildDecember(g) {
     const starLight = new THREE.PointLight(0xffffaa, 2.0, 20);
     starLight.position.copy(star.position);
     g.add(starLight);
-
-    // Glowing ornament orbs
     const oCols = [0xff2233, 0x22cc66, 0xddaa00, 0x4488ff, 0xff66aa, 0xff8800];
     for (let i = 0; i < 38; i++) {
         const orb = new THREE.Mesh(makeSphere(rr(0.18, 0.55), 8), makeMat(oCols[i % oCols.length], { m: 0.95, r: 0.03, emit: oCols[i % oCols.length], emitI: 0.38 }));
@@ -1697,12 +1345,8 @@ function buildDecember(g) {
         orb.userData.float = { ys: rr(0.003, 0.009), p: Math.random() * Math.PI * 2 };
         g.add(orb);
     }
-
-    // Two-layer snowfall
     makeParticles(g, 550, 0xddeeff, 0.12, [-65, 65], [-12, 30], [-55, 14], { snowfall: true });
     makeParticles(g, 80, 0xffffff, 0.23, [-30, 30], [-10, 16], [-20, 10], { snowfall: true });
-
-    // Distant snowy mountains
     for (let m = 0; m < 6; m++) {
         const mtn = new THREE.Mesh(makeCone(rr(10, 22), rr(20, 36), 6), makeMat(0x0a1830, { r: 0.95 }));
         mtn.position.set(rr(-70, 70), -6, rr(-110, -60));
@@ -1714,18 +1358,9 @@ function buildDecember(g) {
 }
 
 const BUILDERS = [
-    buildJanuary,
-    buildFebruary,
-    buildMarch,
-    buildApril,
-    buildMay,
-    buildJune,
-    buildJuly,
-    buildAugust,
-    buildSeptember,
-    buildOctober,
-    buildNovember,
-    buildDecember,
+    buildJanuary, buildFebruary, buildMarch, buildApril,
+    buildMay, buildJune, buildJuly, buildAugust,
+    buildSeptember, buildOctober, buildNovember, buildDecember,
 ];
 const monthGroups = [];
 BUILDERS.forEach((fn, i) => {
@@ -1737,7 +1372,7 @@ BUILDERS.forEach((fn, i) => {
 });
 monthGroups[0].visible = true;
 
-// ── DOM MONTH LABEL — no canvas texture, just a CSS element ───────────────
+// ── DOM MONTH LABEL
 const monthLabelEl = document.getElementById("month-label");
 
 function updateMonthLabel(name, accentCSS) {
@@ -1750,12 +1385,13 @@ function updateMonthLabel(name, accentCSS) {
     );
 }
 
-// ── STATE ──────────────────────────────────────────────────────────────────
+// ── STATE
 let currentMonth = 0;
 let isTransitioning = false;
 let siteEntered = false;
+let activeTab = "sophomore"; // track current tab
 
-// ── THEME APPLICATION ──────────────────────────────────────────────────────
+// ── THEME APPLICATION
 function applyTheme(m, idx) {
     document.documentElement.style.setProperty("--ui-accent", m.accentCSS);
     document.documentElement.style.setProperty("--ui-muted", m.uiMuted);
@@ -1766,15 +1402,12 @@ function applyTheme(m, idx) {
     renderer.setClearColor(m.fogColor, 1);
     const col = new THREE.Color(m.accentHex);
     fillLight.color.copy(col);
-    document
-        .querySelectorAll(".nav-dot")
-        .forEach((d, i) => d.classList.toggle("active", i === (idx ?? currentMonth)));
+    document.querySelectorAll(".nav-dot").forEach((d, i) => d.classList.toggle("active", i === (idx ?? currentMonth)));
     updateMonthLabel(m.name, m.accentCSS);
-    // ── visual upgrade: swap shader sky + env map + post tint
     applySkyConfig(idx ?? currentMonth);
 }
 
-// ── TRANSITION ─────────────────────────────────────────────────────────────
+// ── TRANSITION
 function goToMonth(idx) {
     if (isTransitioning || idx === currentMonth) return;
     if (idx < 0 || idx > 11) return;
@@ -1788,17 +1421,8 @@ function goToMonth(idx) {
             document.getElementById("projects-btn").classList.add("visible");
         },
     });
-    tl.to("#theme-tag", {
-        opacity: 0,
-        y: -10,
-        duration: 0.25,
-        ease: "power2.in",
-    });
-    tl.to(
-        monthLabelEl,
-        { opacity: 0, scale: 0.9, duration: 0.25, ease: "power2.in" },
-        "<",
-    );
+    tl.to("#theme-tag", { opacity: 0, y: -10, duration: 0.25, ease: "power2.in" });
+    tl.to(monthLabelEl, { opacity: 0, scale: 0.9, duration: 0.25, ease: "power2.in" }, "<");
     tl.call(() => {
         monthGroups[currentMonth].visible = false;
         monthGroups[idx].visible = true;
@@ -1807,42 +1431,23 @@ function goToMonth(idx) {
         camera.lookAt(0, 0, 0);
         gsap.set(monthLabelEl, { scale: 1.1 });
     });
-    tl.to(camera.position, {
-        x: 0,
-        y: 2,
-        z: 28,
-        duration: 1.2,
-        ease: "power3.out",
-    });
-    tl.to(
-        camera.rotation,
-        { x: 0, y: 0, z: 0, duration: 1.0, ease: "power2.out" },
-        "<",
-    );
-    tl.to(
-        monthLabelEl,
-        { opacity: 0.92, scale: 1, duration: 0.6, ease: "back.out(1.2)" },
-        "-=0.4",
-    );
-    tl.to(
-        "#theme-tag",
-        { opacity: 1, y: 0, duration: 0.5, ease: "power1.out" },
-        "-=0.4",
-    );
+    tl.to(camera.position, { x: 0, y: 2, z: 28, duration: 1.2, ease: "power3.out" });
+    tl.to(camera.rotation, { x: 0, y: 0, z: 0, duration: 1.0, ease: "power2.out" }, "<");
+    tl.to(monthLabelEl, { opacity: 0.92, scale: 1, duration: 0.6, ease: "back.out(1.2)" }, "-=0.4");
+    tl.to("#theme-tag", { opacity: 1, y: 0, duration: 0.5, ease: "power1.out" }, "-=0.4");
 }
 
-// ── SCROLL ─────────────────────────────────────────────────────────────────
+// ── SCROLL
 const scrollEl = document.getElementById("scroll-driver");
 scrollEl.addEventListener("scroll", () => {
     if (!siteEntered) return;
-    const prog =
-        scrollEl.scrollTop / (scrollEl.scrollHeight - scrollEl.clientHeight);
+    const prog = scrollEl.scrollTop / (scrollEl.scrollHeight - scrollEl.clientHeight);
     document.getElementById("progress").style.width = prog * 100 + "%";
     const idx = Math.min(11, Math.round(prog * 11));
     if (idx !== currentMonth && !isTransitioning) goToMonth(idx);
 });
 
-// ── NAV DOTS ────────────────────────────────────────────────────────────────
+// ── NAV DOTS
 const navDots = document.getElementById("nav-dots");
 MONTHS.forEach((m, i) => {
     const btn = document.createElement("button");
@@ -1851,34 +1456,75 @@ MONTHS.forEach((m, i) => {
     btn.addEventListener("click", () => {
         if (!siteEntered) return;
         const maxScroll = scrollEl.scrollHeight - scrollEl.clientHeight;
-        scrollEl.scrollTo({
-            top: (i / 11) * maxScroll,
-            behavior: "smooth",
-        });
-        goToMonth(i); // directly trigger month instead of waiting for scroll event
+        scrollEl.scrollTo({ top: (i / 11) * maxScroll, behavior: "smooth" });
+        goToMonth(i);
     });
     navDots.appendChild(btn);
 });
 
-// ── PROJECTS OVERLAY ────────────────────────────────────────────────────────
+// ── PROJECTS OVERLAY — TABBED
+const TAB_KEYS = ["sophomore", "junior", "senior"];
+const TAB_LABELS = ["Sophomore", "Junior", "Senior"];
+
+function renderProjectCards(projects) {
+    const proj = document.getElementById("overlay-projects");
+    proj.innerHTML = "";
+    if (!projects || projects.length === 0) {
+        proj.innerHTML = '<div id="overlay-empty">no projects yet — check back soon</div>';
+        return;
+    }
+    projects.forEach((p) => {
+        proj.innerHTML += `<div class="project-card"><div class="card-tag">${p.tag}</div><div class="card-title">${p.title}</div><div class="card-desc">${p.desc}</div></div>`;
+    });
+}
+
+function switchTab(key) {
+    activeTab = key;
+    // Update tab button states
+    document.querySelectorAll(".overlay-tab-btn").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.tab === key);
+    });
+    // Render cards for this tab
+    const m = MONTHS[currentMonth];
+    renderProjectCards(m.projects[key] || []);
+}
+
 function openProjects() {
     const m = MONTHS[currentMonth];
     document.getElementById("overlay-header").textContent = m.name;
     document.getElementById("overlay-subhead").textContent = m.theme;
     document.getElementById("overlay-header").style.color = m.accentCSS;
-    const proj = document.getElementById("overlay-projects");
-    proj.innerHTML = "";
-    if (m.projects && m.projects.length > 0) {
-        m.projects.forEach((p) => {
-            proj.innerHTML += `<div class="project-card"><div class="card-tag">${p.tag}</div><div class="card-title">${p.title}</div><div class="card-desc">${p.desc}</div></div>`;
+
+    // Build tab buttons if not already present
+    let tabBar = document.getElementById("overlay-tab-bar");
+    if (!tabBar) {
+        tabBar = document.createElement("div");
+        tabBar.id = "overlay-tab-bar";
+        TAB_KEYS.forEach((key, i) => {
+            const btn = document.createElement("button");
+            btn.className = "overlay-tab-btn" + (key === activeTab ? " active" : "");
+            btn.dataset.tab = key;
+            btn.textContent = TAB_LABELS[i];
+            btn.addEventListener("click", () => switchTab(key));
+            tabBar.appendChild(btn);
         });
+        // Insert tab bar before the projects grid
+        const overlay = document.getElementById("projects-overlay");
+        const projGrid = document.getElementById("overlay-projects");
+        overlay.insertBefore(tabBar, projGrid);
     } else {
-        proj.innerHTML =
-            '<div id="overlay-empty">no projects yet — check back soon</div>';
+        // Sync active state without rebuilding
+        document.querySelectorAll(".overlay-tab-btn").forEach((btn) => {
+            btn.classList.toggle("active", btn.dataset.tab === activeTab);
+        });
     }
+
+    // Render current tab
+    renderProjectCards(m.projects[activeTab] || []);
     document.getElementById("projects-overlay").classList.add("open");
     document.getElementById("close-btn").style.display = "block";
 }
+
 function closeProjects() {
     document.getElementById("projects-overlay").classList.remove("open");
     document.getElementById("close-btn").style.display = "none";
@@ -1886,23 +1532,11 @@ function closeProjects() {
 window.openProjects = openProjects;
 window.closeProjects = closeProjects;
 
-// ── INTRO ──────────────────────────────────────────────────────────────────
+// ── INTRO
 function enterSite() {
     siteEntered = true;
-    gsap.to("#intro", {
-        opacity: 0,
-        duration: 0.8,
-        ease: "power2.in",
-        onComplete: () => {
-            document.getElementById("intro").style.display = "none";
-        },
-    });
-    gsap.from("#ui", {
-        opacity: 0,
-        duration: 0.8,
-        delay: 0.6,
-        ease: "power1.out",
-    });
+    gsap.to("#intro", { opacity: 0, duration: 0.8, ease: "power2.in", onComplete: () => { document.getElementById("intro").style.display = "none"; } });
+    gsap.from("#ui", { opacity: 0, duration: 0.8, delay: 0.6, ease: "power1.out" });
     gsap.to("#projects-btn", { opacity: 1, duration: 0.5, delay: 1.1 });
     setTimeout(() => {
         document.getElementById("projects-btn").classList.add("visible");
@@ -1910,37 +1544,23 @@ function enterSite() {
     }, 1100);
     const scrollLabel = document.getElementById("scroll-label");
     scrollLabel.style.pointerEvents = "all";
-    scrollLabel.style.cursor = "pointer";  // note: body has cursor:none so your custom cursor handles this
+    scrollLabel.style.cursor = "pointer";
     scrollLabel.addEventListener("click", returnToIntro);
 }
+
 function returnToIntro() {
     siteEntered = false;
     scrollEl.scrollTo({ top: 0, behavior: "instant" });
     goToMonth(0);
-
-    // Fade UI out
-    gsap.to("#ui", {
-        opacity: 0,
-        duration: 0.5,
-        ease: "power2.in",
-        onComplete: () => gsap.set("#ui", { opacity: 1 }),
-    });
-
-    // Bring intro back
+    gsap.to("#ui", { opacity: 0, duration: 0.5, ease: "power2.in", onComplete: () => gsap.set("#ui", { opacity: 1 }) });
     const intro = document.getElementById("intro");
     intro.style.display = "flex";
     gsap.fromTo("#intro", { opacity: 0 }, { opacity: 1, duration: 0.8, delay: 0.3, ease: "power2.out" });
-
-    // Re-animate intro elements
     gsap.fromTo("#intro-name", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, delay: 0.5, ease: "expo.out" });
     gsap.fromTo("#intro-title", { opacity: 0 }, { opacity: 1, duration: 0.8, delay: 0.85, ease: "power1.out" });
     gsap.fromTo("#intro-sub", { opacity: 0 }, { opacity: 1, duration: 0.8, delay: 1.05, ease: "power1.out" });
     gsap.fromTo("#enter-btn, #about-btn", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7, delay: 1.25, ease: "back.out(1.3)", stagger: 0.08 });
-
-    // Fade UI back in when intro is dismissed again
-    gsap.set("#ui", { opacity: 1, delay: 0 }); // reset for next enterSite()
-
-    // Remove click listener so it doesn't stack
+    gsap.set("#ui", { opacity: 1, delay: 0 });
     document.getElementById("scroll-label").style.pointerEvents = "none";
 }
 window.returnToIntro = returnToIntro;
@@ -1949,68 +1569,32 @@ window.enterSite = enterSite;
 window.addEventListener("load", () => {
     applyTheme(MONTHS[0]);
     renderer.setClearColor(0x0d1830, 1);
-    gsap.from("#intro-name", {
-        y: 80,
-        opacity: 0,
-        duration: 1.1,
-        delay: 0.3,
-        ease: "expo.out",
-    });
-    gsap.from("#intro-title", {
-        opacity: 0,
-        duration: 1,
-        delay: 0.75,
-        ease: "power1.out",
-    });
-    gsap.from("#intro-sub", {
-        opacity: 0,
-        duration: 1,
-        delay: 1.0,
-        ease: "power1.out",
-    });
-    gsap.fromTo(
-        "#enter-btn, #about-btn",
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.7, delay: 1.3, ease: "back.out(1.3)", stagger: 0.08 }
-    );
+    gsap.from("#intro-name", { y: 80, opacity: 0, duration: 1.1, delay: 0.3, ease: "expo.out" });
+    gsap.from("#intro-title", { opacity: 0, duration: 1, delay: 0.75, ease: "power1.out" });
+    gsap.from("#intro-sub", { opacity: 0, duration: 1, delay: 1.0, ease: "power1.out" });
+    gsap.fromTo("#enter-btn, #about-btn", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7, delay: 1.3, ease: "back.out(1.3)", stagger: 0.08 });
 });
 
-// ── CURSOR ─────────────────────────────────────────────────────────────────
+// ── CURSOR
 const cur = document.getElementById("cursor");
 const ring = document.getElementById("cursor-ring");
-let mx = 0,
-    my = 0,
-    rx = 0,
-    ry = 0;
+let mx = 0, my = 0, rx = 0, ry = 0;
 document.addEventListener("mousemove", (e) => {
-    mx = e.clientX;
-    my = e.clientY;
-    cur.style.left = mx + "px";
-    cur.style.top = my + "px";
+    mx = e.clientX; my = e.clientY;
+    cur.style.left = mx + "px"; cur.style.top = my + "px";
 });
 (function tickCursor() {
-    rx += (mx - rx) * 0.1;
-    ry += (my - ry) * 0.1;
-    ring.style.left = rx + "px";
-    ring.style.top = ry + "px";
+    rx += (mx - rx) * 0.1; ry += (my - ry) * 0.1;
+    ring.style.left = rx + "px"; ring.style.top = ry + "px";
     requestAnimationFrame(tickCursor);
 })();
 document.querySelectorAll("button,a").forEach((el) => {
-    el.addEventListener("mouseenter", () => {
-        ring.style.width = "54px";
-        ring.style.height = "54px";
-        ring.style.opacity = "0.6";
-    });
-    el.addEventListener("mouseleave", () => {
-        ring.style.width = "32px";
-        ring.style.height = "32px";
-        ring.style.opacity = "1";
-    });
+    el.addEventListener("mouseenter", () => { ring.style.width = "54px"; ring.style.height = "54px"; ring.style.opacity = "0.6"; });
+    el.addEventListener("mouseleave", () => { ring.style.width = "32px"; ring.style.height = "32px"; ring.style.opacity = "1"; });
 });
 
-// ── ANIMATION LOOP ─────────────────────────────────────────────────────────
+// ── ANIMATION LOOP
 const clock = new THREE.Clock();
-let oceanTimeAcc = 0;
 
 function animate() {
     requestAnimationFrame(animate);
@@ -2022,8 +1606,7 @@ function animate() {
         if (obj.userData.float) {
             const f = obj.userData.float;
             obj.position.y += Math.sin(t * f.ys * 60 + f.p) * 0.002;
-            if (f.drift)
-                obj.position.x += Math.sin(t * 0.3 + f.p) * f.drift * 0.15;
+            if (f.drift) obj.position.x += Math.sin(t * 0.3 + f.p) * f.drift * 0.15;
         }
         if (obj.userData.leaf) {
             const l = obj.userData.leaf;
@@ -2054,17 +1637,11 @@ function animate() {
             obj.rotation.y += 0.007;
         }
         if (obj.userData.ocean) {
-            // Only update ocean vertices every other frame for perf
             if (Math.floor(t * 60) % 2 === 0) {
                 const pos = obj.geometry.attributes.position;
                 for (let i = 0; i < pos.count; i++) {
-                    const x = pos.getX(i),
-                        z = pos.getZ(i);
-                    pos.setY(
-                        i,
-                        Math.sin(x * 0.28 + t) * 0.55 +
-                        Math.sin(z * 0.38 + t * 1.1) * 0.35,
-                    );
+                    const x = pos.getX(i), z = pos.getZ(i);
+                    pos.setY(i, Math.sin(x * 0.28 + t) * 0.55 + Math.sin(z * 0.38 + t * 1.1) * 0.35);
                 }
                 pos.needsUpdate = true;
                 obj.geometry.computeVertexNormals();
@@ -2072,24 +1649,18 @@ function animate() {
         }
     });
 
-    // Gentle scene sway
     grp.rotation.y = Math.sin(t * 0.12) * 0.04;
     grp.rotation.x = Math.sin(t * 0.09) * 0.014;
-
-    // Month label float (CSS transform via JS)
     monthLabelEl.style.transform = `translate(-50%, calc(-50% + ${Math.sin(t * 0.4) * 5}px))`;
-
     sunLight.intensity = 1.7 + Math.sin(t * 0.6) * 0.3;
-    // update shader uniforms
     skyMat.uniforms.uTime.value = t;
     finishingPass.uniforms.uTime.value = t;
-    // keep sky dome centred on camera so it never feels finite
     skyMesh.position.copy(camera.position);
     composer.render();
 }
 animate();
 
-// ── RESIZE ─────────────────────────────────────────────────────────────────
+// ── RESIZE
 window.addEventListener("resize", () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
