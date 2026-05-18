@@ -174,7 +174,10 @@ const MONTHS = [
         uiMuted: "rgba(255,140,40,0.35)",
         projects: {
             sophomore: [],
-            junior: [],
+            junior: [
+                { tag: "HTML / CSS", title: "Summer Tainment", desc: "Create a website to describe what you did over the summer", link: "https://zahrevans.github.io/Summer-taiment/" }
+
+            ],
             senior: [],
         },
         camFrom: { x: 50, y: -25, z: 25 },
@@ -193,7 +196,9 @@ const MONTHS = [
         uiMuted: "rgba(160,60,255,0.35)",
         projects: {
             sophomore: [],
-            junior: [],
+            junior: [
+                { tag: "HTML / CSS", title: "Look Ma' I'm Famous", desc: "Create an autobiographical website for a Famous Historical Figure (born before 1900).", link: "https://zahrevans.github.io/LookMaImFamous/" }
+            ],
             senior: [],
         },
         camFrom: { x: -50, y: -25, z: 25 },
