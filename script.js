@@ -15,15 +15,12 @@ const MONTHS = [
         accentCSS: "#8cbeff",
         uiMuted: "rgba(140,190,255,0.35)",
         projects: {
-            sophomore: [
-                // { tag: "REACT / THREE.JS", title: "Aurora Dashboard", desc: "Real-time data visualization with particle-based rendering." },
-            ],
+            sophomore: [],
             junior: [
-                // { tag: "NEXT.JS / API", title: "Frost Commerce", desc: "E-commerce platform built for winter seasonal drops." },
+                { tag: "HTML / CSS / JS", title: "Random Name Generator", desc: "A site that generates a random name on demand from arrays of first and last names.", link: "https://zahrevans.github.io/NameGeneratorSite/" },
+                { tag: "HTML / CSS", title: "Monthly Website Gallery", desc: "A landing page collecting and showcasing the year's monthly site projects.", link: "https://zahrevans.github.io/MonthlyWebsiteGallery/" },
             ],
-            senior: [
-                // { tag: "THREE.JS", title: "Crystal World", desc: "Interactive snow globe renderer." },
-            ],
+            senior: [],
         },
         camFrom: { x: 0, y: 40, z: 40 },
     },
@@ -41,8 +38,13 @@ const MONTHS = [
         uiMuted: "rgba(255,100,140,0.35)",
         projects: {
             sophomore: [],
-            junior: [],
-            senior: [],
+            junior: [
+                { tag: "HTML / CSS / JS", title: "Rock Paper Scissors", desc: "A browser-based RPS game with score tracking and animated outcomes.", link: "https://zahrevans.github.io/RPS-game/" },
+                { tag: "HTML / CSS / JS", title: "Postcard Generator", desc: "Build and customize a postcard, then preview the design in the browser.", link: "https://zahrevans.github.io/Postcard-Generator/" },
+            ],
+            senior: [
+                { tag: "CSS / MULTI-PAGE", title: "Marlboro High School Sports", desc: "Multi-page site hub for MHS athletics with landing page and team highlights.", link: "https://zahrevans.github.io/MHSSports/" },
+            ],
         },
         camFrom: { x: -50, y: 0, z: 20 },
     },
@@ -60,7 +62,9 @@ const MONTHS = [
         uiMuted: "rgba(120,230,100,0.35)",
         projects: {
             sophomore: [],
-            junior: [],
+            junior: [
+                { tag: "HTML / CSS / JS", title: "Shamrock Hangman", desc: "St. Patrick's Day-themed hangman game with letter guessing and win/lose logic.", link: "https://zahrevans.github.io/hangmanwebsite/" },
+            ],
             senior: [],
         },
         camFrom: { x: 50, y: 0, z: 20 },
@@ -79,8 +83,14 @@ const MONTHS = [
         uiMuted: "rgba(255,170,200,0.35)",
         projects: {
             sophomore: [],
-            junior: [],
-            senior: [],
+            junior: [
+                { tag: "HTML / CSS", title: "President Research: Andrew Jackson", desc: "Research site profiling Andrew Jackson — biography, presidency, and legacy.", link: "https://zahrevans.github.io/PresidentResearch/" },
+                { tag: "HTML / CSS / JS", title: "Simple To-Do List", desc: "An interactive to-do list with add, complete, and remove functionality.", link: "https://zahrevans.github.io/ToDoList/" },
+                { tag: "HTML / CSS", title: "April Wildcard", desc: "April monthly site — a free-choice wildcard build experimenting with new layouts.", link: "https://zahrevans.github.io/aprilmonthlysite/" },
+            ],
+            senior: [
+                { tag: "CSS / MULTI-PAGE", title: "Marlboro Mustangs Wrestling", desc: "Team site for MHS Wrestling with roster, schedule, and program info.", link: "https://zahrevans.github.io/MHSWrestling/" },
+            ],
         },
         camFrom: { x: -35, y: -35, z: 30 },
     },
@@ -98,8 +108,13 @@ const MONTHS = [
         uiMuted: "rgba(255,220,60,0.35)",
         projects: {
             sophomore: [],
-            junior: [],
-            senior: [],
+            junior: [
+                { tag: "JAVASCRIPT", title: "State Facts Objects", desc: "Practice project using JS objects to store and display facts about U.S. states.", link: "https://github.com/zahrevans/State-Facts-Objects-Practice" },
+                { tag: "HTML / CSS / JS", title: "May Monthly Site", desc: "Welcome-page style May monthly site exploring fresh visual direction.", link: "https://zahrevans.github.io/Maymonthly/" },
+            ],
+            senior: [
+                { tag: "JAVASCRIPT / THREE.JS", title: "Senior Portfolio", desc: "Capstone portfolio site — the very project you're looking at right now.", link: "https://github.com/zahrevans/seniorPortfolio" },
+            ],
         },
         camFrom: { x: 0, y: -50, z: 30 },
     },
@@ -117,7 +132,9 @@ const MONTHS = [
         uiMuted: "rgba(40,190,255,0.35)",
         projects: {
             sophomore: [],
-            junior: [],
+            junior: [
+                { tag: "HTML / CSS", title: "Little Bird Toy Company", desc: "Brand site for a fictional toy company — final project showcasing layout and styling.", link: "https://zahrevans.github.io/Littlebirdtoycompany/" },
+            ],
             senior: [],
         },
         camFrom: { x: 50, y: 25, z: 20 },
@@ -175,10 +192,11 @@ const MONTHS = [
         projects: {
             sophomore: [],
             junior: [
-                { tag: "HTML / CSS", title: "Summer Tainment", desc: "Create a website to describe what you did over the summer", link: "https://zahrevans.github.io/Summer-taiment/" }
-
+                { tag: "HTML / CSS", title: "Summer Tainment", desc: "Create a website to describe what you did over the summer", link: "https://zahrevans.github.io/Summer-taiment/" },
             ],
-            senior: [],
+            senior: [
+                { tag: "HTML / CSS", title: "College Recruitment: Arizona State", desc: "Recruitment-style landing site profiling Arizona State University.", link: "https://zahrevans.github.io/CollegeRecruitment/" },
+            ],
         },
         camFrom: { x: 50, y: -25, z: 25 },
     },
@@ -197,9 +215,16 @@ const MONTHS = [
         projects: {
             sophomore: [],
             junior: [
-                { tag: "HTML / CSS", title: "Look Ma' I'm Famous", desc: "Create an autobiographical website for a Famous Historical Figure (born before 1900).", link: "https://zahrevans.github.io/LookMaImFamous/" }
+                { tag: "HTML / CSS", title: "Look Ma' I'm Famous", desc: "Create an autobiographical website for a Famous Historical Figure (born before 1900).", link: "https://zahrevans.github.io/LookMaImFamous/" },
             ],
-            senior: [],
+            senior: [
+                { tag: "JAVASCRIPT", title: "JS Refresher", desc: "Back-to-school refresher covering core JavaScript fundamentals.", link: "https://github.com/zahrevans/JSrefresher" },
+                { tag: "JAVASCRIPT", title: "Functions Refresher (1.01)", desc: "Lesson code reviewing JavaScript functions, parameters, and return values.", link: "https://github.com/zahrevans/1.01-Functions-Refresher-Lesson-Code" },
+                { tag: "JAVASCRIPT / DOM", title: "Event Listeners Refresher (1.03)", desc: "Lesson code on attaching event listeners and handling user interaction.", link: "https://github.com/zahrevans/1.03-Event-Listeners-Refresher-LESSON-code" },
+                { tag: "AJAX / HTML", title: "Cards With Friends", desc: "AJAX basics — fetching and rendering data from external sources.", link: "https://zahrevans.github.io/ajaxbasics/" },
+                { tag: "AJAX / HTML", title: "Friends' Schedules", desc: "AJAX project loading and displaying schedule data dynamically.", link: "https://zahrevans.github.io/ajaxschedules/" },
+                { tag: "JAVA", title: "Unit 2: Loops", desc: "Coursework practice covering loop structures and iteration patterns.", link: "https://github.com/zahrevans/Unit-2-Loops" },
+            ],
         },
         camFrom: { x: -50, y: -25, z: 25 },
     },
@@ -218,7 +243,9 @@ const MONTHS = [
         projects: {
             sophomore: [],
             junior: [],
-            senior: [],
+            senior: [
+                { tag: "JQUERY / JS", title: "NJIT jQuery Slideshow", desc: "NJIT project starter — image slideshow built with jQuery transitions and controls.", link: "https://zahrevans.github.io/NJIT-jQ-SlideShow-Project-Starter/" },
+            ],
         },
         camFrom: { x: 0, y: 0, z: -10 },
     },
@@ -236,8 +263,16 @@ const MONTHS = [
         uiMuted: "rgba(120,200,255,0.35)",
         projects: {
             sophomore: [],
-            junior: [],
-            senior: [],
+            junior: [
+                { tag: "HTML / CSS / JS", title: "Mad Libs", desc: "Classic Mad Libs word-game site that fills in user-supplied words into a story.", link: "https://zahrevans.github.io/MadLibsWebste/" },
+                { tag: "HTML / CSS / JS", title: "Magic 8 Ball", desc: "Click for fortunes — an interactive Magic 8 Ball with randomized responses.", link: "https://zahrevans.github.io/MagicEightBall/" },
+            ],
+            senior: [
+                { tag: "VUE.JS", title: "Vue Mastery Tutorial", desc: "Working through the Vue Mastery course — components, props, and reactivity.", link: "https://zahrevans.github.io/Vue-Mastery-Tutorial/" },
+                { tag: "CSS / GALLERY", title: "IS219 Project 3 Gallery", desc: "NJIT IS219 starter files — a gallery layout build for the third course project.", link: "https://zahrevans.github.io/NJIT-3_StarterFiles/" },
+                { tag: "HTML / CSS", title: "Serial Killers", desc: "Research-style site profiling notorious figures (Ted Kaczynski overview, etc.).", link: "https://zahrevans.github.io/Serial-killer-Website/" },
+                { tag: "HTML / CSS / JS", title: "Holiday Coloring Book", desc: "Interactive coloring book with holiday-themed line-art and a color picker.", link: "https://zahrevans.github.io/holidaycoloringbook/" },
+            ],
         },
         camFrom: { x: 35, y: 35, z: 40 },
     },
@@ -1479,7 +1514,14 @@ function renderProjectCards(projects) {
         return;
     }
     projects.forEach((p) => {
-        proj.innerHTML += `<div class="project-card"><div class="card-tag">${p.tag}</div><div class="card-title">${p.title}</div><div class="card-desc">${p.desc}</div></div>`;
+        const href = p.link || "#";
+        proj.innerHTML += `<a class="project-card" href="${href}" target="_blank" rel="noopener noreferrer"><div class="card-tag">${p.tag}</div><div class="card-title">${p.title}</div><div class="card-desc">${p.desc}</div></a>`;
+    });
+    // Re-bind cursor ring hover for the newly created cards
+    const ring = document.getElementById("cursor-ring");
+    proj.querySelectorAll("a.project-card").forEach((el) => {
+        el.addEventListener("mouseenter", () => { ring.style.width = "54px"; ring.style.height = "54px"; ring.style.opacity = "0.6"; });
+        el.addEventListener("mouseleave", () => { ring.style.width = "32px"; ring.style.height = "32px"; ring.style.opacity = "1"; });
     });
 }
 
