@@ -85,7 +85,7 @@ const MONTHS = [
             sophomore: [],
             junior: [
                 { tag: "HTML / CSS", title: "President Research: Andrew Jackson", desc: "Research site profiling Andrew Jackson — biography, presidency, and legacy.", link: "https://zahrevans.github.io/PresidentResearch/" },
-                { tag: "HTML / CSS / JS", title: "Simple To-Do List", desc: "An interactive to-do list with add, complete, and remove functionality.", link: "https://zahrevans.github.io/ToDoList/" },
+                
                 { tag: "HTML / CSS", title: "April Wildcard", desc: "April monthly site — a free-choice wildcard build experimenting with new layouts.", link: "https://zahrevans.github.io/aprilmonthlysite/" },
             ],
             senior: [
@@ -218,12 +218,10 @@ const MONTHS = [
                 { tag: "HTML / CSS", title: "Look Ma' I'm Famous", desc: "Create an autobiographical website for a Famous Historical Figure (born before 1900).", link: "https://zahrevans.github.io/LookMaImFamous/" },
             ],
             senior: [
-                { tag: "JAVASCRIPT", title: "JS Refresher", desc: "Back-to-school refresher covering core JavaScript fundamentals.", link: "https://github.com/zahrevans/JSrefresher" },
-                { tag: "JAVASCRIPT", title: "Functions Refresher (1.01)", desc: "Lesson code reviewing JavaScript functions, parameters, and return values.", link: "https://github.com/zahrevans/1.01-Functions-Refresher-Lesson-Code" },
-                { tag: "JAVASCRIPT / DOM", title: "Event Listeners Refresher (1.03)", desc: "Lesson code on attaching event listeners and handling user interaction.", link: "https://github.com/zahrevans/1.03-Event-Listeners-Refresher-LESSON-code" },
+                
                 { tag: "AJAX / HTML", title: "Cards With Friends", desc: "AJAX basics — fetching and rendering data from external sources.", link: "https://zahrevans.github.io/ajaxbasics/" },
                 { tag: "AJAX / HTML", title: "Friends' Schedules", desc: "AJAX project loading and displaying schedule data dynamically.", link: "https://zahrevans.github.io/ajaxschedules/" },
-                { tag: "JAVA", title: "Unit 2: Loops", desc: "Coursework practice covering loop structures and iteration patterns.", link: "https://github.com/zahrevans/Unit-2-Loops" },
+                
             ],
         },
         camFrom: { x: -50, y: -25, z: 25 },
@@ -268,7 +266,7 @@ const MONTHS = [
                 { tag: "HTML / CSS / JS", title: "Magic 8 Ball", desc: "Click for fortunes — an interactive Magic 8 Ball with randomized responses.", link: "https://zahrevans.github.io/MagicEightBall/" },
             ],
             senior: [
-                { tag: "VUE.JS", title: "Vue Mastery Tutorial", desc: "Working through the Vue Mastery course — components, props, and reactivity.", link: "https://zahrevans.github.io/Vue-Mastery-Tutorial/" },
+                
                 { tag: "CSS / GALLERY", title: "IS219 Project 3 Gallery", desc: "NJIT IS219 starter files — a gallery layout build for the third course project.", link: "https://zahrevans.github.io/NJIT-3_StarterFiles/" },
                 { tag: "HTML / CSS", title: "Serial Killers", desc: "Research-style site profiling notorious figures (Ted Kaczynski overview, etc.).", link: "https://zahrevans.github.io/Serial-killer-Website/" },
                 { tag: "HTML / CSS / JS", title: "Holiday Coloring Book", desc: "Interactive coloring book with holiday-themed line-art and a color picker.", link: "https://zahrevans.github.io/holidaycoloringbook/" },
@@ -1506,43 +1504,305 @@ MONTHS.forEach((m, i) => {
 const TAB_KEYS = ["sophomore", "junior", "senior"];
 const TAB_LABELS = ["Sophomore", "Junior", "Senior"];
 
+// ── SOPHOMORE GRAVEYARD ────────────────────────────────────────────────────
+function destroyGraveyard() {
+    const old = document.getElementById("soph-graveyard-wrap");
+    if (old) old.remove();
+}
+
+function buildGraveyard(container) {
+    destroyGraveyard();
+
+    const wrap = document.createElement("div");
+    wrap.id = "soph-graveyard-wrap";
+    wrap.style.cssText =
+        "width:100%;max-width:960px;display:flex;flex-direction:column;" +
+        "align-items:center;padding:40px 20px 20px;gap:0;";
+
+    // Tombstone SVG
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+   svg.setAttribute("viewBox", "0 0 120 370");
+svg.setAttribute("width", "120");
+svg.setAttribute("height", "370");
+svg.innerHTML = `
+  <defs>
+    <pattern id="gr" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="0.4" fill="rgba(255,255,255,0.06)"/>
+      <circle cx="3" cy="3" r="0.3" fill="rgba(0,0,0,0.06)"/>
+    </pattern>
+  </defs>
+
+  <!-- shadow -->
+  <ellipse cx="60" cy="358" rx="46" ry="6" fill="rgba(0,0,0,0.28)"/>
+
+  <!-- plinth -->
+  <rect x="8" y="322" width="104" height="20" rx="3" fill="#2a2826"/>
+  <rect x="8" y="322" width="104" height="20" rx="3" fill="url(#gr)"/>
+  <line x1="8" y1="324" x2="112" y2="324" stroke="rgba(255,255,255,0.07)" stroke-width="0.8"/>
+
+  <!-- ledge -->
+  <rect x="14" y="310" width="92" height="14" rx="2" fill="#2e2c2a"/>
+  <rect x="14" y="310" width="92" height="14" rx="2" fill="url(#gr)"/>
+
+  <!-- main shaft -->
+  <path d="M18,52 Q18,6 60,6 Q102,6 102,52 L102,312 L18,312 Z" fill="#2d2b29"/>
+  <path d="M18,52 Q18,6 60,6 Q102,6 102,52 L102,312 L18,312 Z" fill="url(#gr)"/>
+
+  <!-- left face highlight -->
+  <path d="M18,52 Q18,6 60,6 L60,312 L18,312 Z" fill="rgba(255,255,255,0.025)"/>
+
+  <!-- carved border -->
+  <path d="M26,56 Q26,16 60,16 Q94,16 94,56 L94,300 L26,300 Z"
+        fill="none" stroke="rgba(0,0,0,0.35)" stroke-width="1.8"/>
+  <path d="M28,57 Q28,18 60,18 Q92,18 92,57 L92,298 L28,298 Z"
+        fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="0.7"/>
+
+  <!-- cross -->
+  <line x1="60" y1="38" x2="60" y2="82" stroke="rgba(255,255,255,0.14)" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="41" y1="56" x2="79" y2="56" stroke="rgba(255,255,255,0.14)" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="61" y1="39" x2="61" y2="83" stroke="rgba(0,0,0,0.18)" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="42" y1="57" x2="80" y2="57" stroke="rgba(0,0,0,0.18)" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- R.I.P. -->
+  <text x="60" y="108" font-family="Bebas Neue,serif" font-size="15"
+        fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="0.5"
+        text-anchor="middle" letter-spacing="4">R.I.P.</text>
+
+  <line x1="36" y1="116" x2="84" y2="116" stroke="rgba(255,255,255,0.1)" stroke-width="0.7"/>
+
+  <!-- SOPHOMORE YEAR -->
+  <text x="60" y="134" font-family="Cormorant Garamond,serif" font-size="9.5" font-style="italic"
+        fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="0.35"
+        text-anchor="middle" letter-spacing="1.5">SOPHOMORE</text>
+  <text x="60" y="149" font-family="Cormorant Garamond,serif" font-size="9.5" font-style="italic"
+        fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="0.35"
+        text-anchor="middle" letter-spacing="1.5">YEAR</text>
+
+  <line x1="42" y1="157" x2="78" y2="157" stroke="rgba(255,255,255,0.07)" stroke-width="0.6"/>
+
+  <!-- DELETED -->
+  <text x="60" y="172" font-family="Space Mono,monospace" font-size="7"
+        fill="rgba(255,255,255,0.1)" text-anchor="middle" letter-spacing="1.2">DELETED</text>
+
+  <!-- diamond -->
+  <polygon points="60,183 64,187 60,191 56,187" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.1)" stroke-width="0.4"/>
+
+  <!-- lichen -->
+  <ellipse cx="34" cy="185" rx="5" ry="2.5" fill="rgba(80,100,60,0.2)"/>
+  <ellipse cx="88" cy="220" rx="4" ry="2" fill="rgba(70,90,50,0.18)"/>
+  <ellipse cx="30" cy="255" rx="6" ry="2" fill="rgba(80,100,60,0.15)"/>
+
+  <!-- weathering streaks -->
+  <line x1="46" y1="18" x2="44" y2="100" stroke="rgba(0,0,0,0.1)" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="18" x2="76" y2="180" stroke="rgba(0,0,0,0.07)" stroke-width="0.7" stroke-linecap="round"/>
+
+  <!-- right edge shadow -->
+  <path d="M102,52 Q102,6 60,6" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="2.5"/>
+  <line x1="102" y1="52" x2="102" y2="312" stroke="rgba(0,0,0,0.22)" stroke-width="2.5"/>
+
+  <!-- arch highlight -->
+  <path d="M28,57 Q28,18 60,18 Q92,18 92,57" fill="none" stroke="rgba(255,255,255,0.09)" stroke-width="0.9"/>
+
+  <!-- grass tufts -->
+  <line x1="18" y1="322" x2="14" y2="311" stroke="rgba(40,80,30,0.6)" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="23" y1="322" x2="21" y2="309" stroke="rgba(50,90,35,0.5)" stroke-width="1" stroke-linecap="round"/>
+  <line x1="28" y1="322" x2="30" y2="310" stroke="rgba(40,80,30,0.55)" stroke-width="1" stroke-linecap="round"/>
+  <line x1="92" y1="322" x2="96" y2="311" stroke="rgba(40,80,30,0.6)" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="97" y1="322" x2="100" y2="309" stroke="rgba(50,90,35,0.5)" stroke-width="1" stroke-linecap="round"/>
+  <line x1="102" y1="322" x2="100" y2="310" stroke="rgba(40,80,30,0.55)" stroke-width="1" stroke-linecap="round"/>
+`;
+    wrap.appendChild(svg);
+
+    // Epitaph line
+    const epitaph = document.createElement("div");
+    epitaph.id = "soph-epitaph";
+    epitaph.textContent = "Here lies sophomore year";
+    epitaph.style.cssText =
+        "font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;" +
+        "letter-spacing:0.35em;color:rgba(255,255,255,0.28);text-transform:uppercase;" +
+        "text-align:center;margin-top:28px;opacity:0;";
+    wrap.appendChild(epitaph);
+
+    // Sub line
+    const sub = document.createElement("div");
+    sub.id = "soph-sub";
+    sub.textContent = "old projects deleted";
+    sub.style.cssText =
+        "font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.45em;" +
+        "color:rgba(255,255,255,0.1);text-transform:uppercase;text-align:center;" +
+        "margin-top:10px;opacity:0;";
+    wrap.appendChild(sub);
+
+    container.appendChild(wrap);
+
+    // Animate in
+    anime({
+        targets: svg,
+        opacity: [0, 1],
+        translateY: [18, 0],
+        easing: "spring(1, 72, 10, 0)",
+        duration: 900,
+        delay: 60,
+    });
+    anime({
+        targets: "#soph-epitaph",
+        opacity: [0, 1],
+        translateY: [8, 0],
+        easing: "easeOutQuad",
+        duration: 700,
+        delay: 480,
+    });
+    anime({
+        targets: "#soph-sub",
+        opacity: [0, 1],
+        translateY: [6, 0],
+        easing: "easeOutQuad",
+        duration: 600,
+        delay: 720,
+    });
+}
+
+
+// ── FEATURED PROJECT BLOG DATA ─────────────────────────────────────────────
+const FEATURED_BLOGS = {
+    "Marlboro High School Sports": {
+        tag: "MHS Sports — Behind the build",
+        title: "Building a Hub for Every Team",
+        meta: "Senior Year · Feb 2025 · CSS / Multi-Page",
+        body: `<p>MHS Sports started as a simple idea — one landing page that linked out to every team. What it became was a real exercise in consistent design language across multiple pages without a single line of JavaScript.</p>
+               <p>Every team page shares the same grid structure but carries its own color accent and photo treatment, making each feel distinct while still cohesive. Getting the navigation to feel natural across six pages with pure CSS was the biggest challenge.</p>
+               <p>This project pushed me to think about design systems before I knew what a design system was.</p>`,
+        stats: [{ n: "6", l: "pages" }, { n: "~3 wks", l: "build time" }, { n: "CSS only", l: "no JS" }],
+        link: "https://zahrevans.github.io/MHSSports/",
+    },
+    "Marlboro Mustangs Wrestling": {
+        tag: "MHS Wrestling — Behind the build",
+        title: "A Team Site That Earns Its Weight",
+        meta: "Senior Year · Apr 2025 · CSS / Multi-Page",
+        body: `<p>Wrestling needed something grittier than the sports hub. The brief was a full team site — roster, schedule, and program history — all in a single cohesive package.</p>
+               <p>The design leans dark and physical. Heavy typography, tight grids, and a monochromatic palette with a single red accent. The roster page uses a card-per-wrestler layout that scales cleanly whether there are eight athletes or thirty.</p>
+               <p>Multi-page architecture meant planning every internal link before writing a single line of CSS — a good lesson in thinking before coding.</p>`,
+        stats: [{ n: "5", l: "pages" }, { n: "~2 wks", l: "build time" }, { n: "CSS / HTML", l: "stack" }],
+        link: "https://zahrevans.github.io/MHSWrestling/",
+    },
+    "Random Name Generator": {
+        tag: "Name Generator — Behind the build",
+        title: "500 Names, One Button",
+        meta: "Junior Year · Jan 2025 · HTML / CSS / JS",
+        body: `<p>The Random Name Generator was my first real encounter with JavaScript arrays doing actual work. Two lists — first names and last names — combined on click to spit out a full name. Simple concept, but getting the randomness to feel genuinely surprising took more thought than expected.</p>
+               <p>Beyond the logic, this was a layout exercise: how do you make a single-action utility feel satisfying? The answer turned out to be generous whitespace, a bold display font for the result, and a button that has real weight to it.</p>
+               <p>It's a small project, but it's the one where JavaScript stopped feeling like magic and started feeling like a tool.</p>`,
+        stats: [{ n: "500+", l: "combos" }, { n: "1 week", l: "build time" }, { n: "Vanilla JS", l: "stack" }],
+        link: "https://zahrevans.github.io/NameGeneratorSite/",
+    },
+};
+
+const FEATURED_TITLES = Object.keys(FEATURED_BLOGS);
+
+// ── BLOG POPUP ELEMENT (injected once) ────────────────────────────────────
+function ensureBlogOverlay() {
+    if (document.getElementById("blog-overlay")) return;
+    const overlay = document.createElement("div");
+    overlay.id = "blog-overlay";
+    overlay.innerHTML = `
+        <div id="blog-popup">
+            <button id="blog-popup-close" onclick="closeBlog()">✕</button>
+            <div class="blog-tag-line" id="blog-popup-tag"></div>
+            <div class="blog-title-main" id="blog-popup-title"></div>
+            <div class="blog-meta-line" id="blog-popup-meta"></div>
+            <hr class="blog-divider">
+            <div class="blog-body" id="blog-popup-body"></div>
+            <div class="blog-stats" id="blog-popup-stats"></div>
+            <a class="blog-visit-link" id="blog-popup-link" target="_blank" rel="noopener noreferrer">Visit site ↗</a>
+        </div>`;
+    overlay.addEventListener("click", (e) => { if (e.target === overlay) closeBlog(); });
+    document.body.appendChild(overlay);
+}
+
+function openBlog(title) {
+    const data = FEATURED_BLOGS[title];
+    if (!data) return;
+    ensureBlogOverlay();
+    document.getElementById("blog-popup-tag").textContent = data.tag;
+    document.getElementById("blog-popup-title").textContent = data.title;
+    document.getElementById("blog-popup-meta").textContent = data.meta;
+    document.getElementById("blog-popup-body").innerHTML = data.body;
+    document.getElementById("blog-popup-stats").innerHTML = data.stats
+        .map(s => `<div class="blog-stat"><span class="blog-stat-n">${s.n}</span><span class="blog-stat-l">${s.l}</span></div>`)
+        .join("");
+    document.getElementById("blog-popup-link").href = data.link;
+    document.getElementById("blog-overlay").classList.add("open");
+}
+
+function closeBlog() {
+    const el = document.getElementById("blog-overlay");
+    if (el) el.classList.remove("open");
+}
+window.openBlog = openBlog;
+window.closeBlog = closeBlog;
+// ── renderProjectCards ────────────────────────────────────────────────────
 function renderProjectCards(projects) {
     const proj = document.getElementById("overlay-projects");
     proj.innerHTML = "";
+
+    if (activeTab === "sophomore") {
+        buildGraveyard(proj);
+        return;
+    }
+
     if (!projects || projects.length === 0) {
         proj.innerHTML = '<div id="overlay-empty">no projects yet — check back soon</div>';
         return;
     }
+
     projects.forEach((p) => {
         const href = p.link || "#";
-        proj.innerHTML += `<a class="project-card" href="${href}" target="_blank" rel="noopener noreferrer"><div class="card-tag">${p.tag}</div><div class="card-title">${p.title}</div><div class="card-desc">${p.desc}</div></a>`;
+        const isFeatured = FEATURED_TITLES.includes(p.title);
+        const card = document.createElement("div");
+        card.className = "project-card" + (isFeatured ? " featured" : "");
+
+        card.innerHTML = `
+            <div class="card-tag">${p.tag}</div>
+            <div class="card-title">${p.title}</div>
+            <div class="card-desc">${p.desc}</div>
+            ${isFeatured
+                ? `<button class="blog-trigger-btn" onclick="openBlog('${p.title.replace(/'/g, "\\'")}')">Read more →</button>`
+                : `<a class="card-link-anchor" href="${href}" target="_blank" rel="noopener noreferrer" style="display:none"></a>`
+            }`;
+
+        if (!isFeatured) {
+            card.style.cursor = "pointer";
+            card.addEventListener("click", () => window.open(href, "_blank", "noopener,noreferrer"));
+        }
+
+        proj.appendChild(card);
     });
-    // Re-bind cursor ring hover for the newly created cards
+
     const ring = document.getElementById("cursor-ring");
-    proj.querySelectorAll("a.project-card").forEach((el) => {
+    proj.querySelectorAll(".project-card").forEach((el) => {
         el.addEventListener("mouseenter", () => { ring.style.width = "54px"; ring.style.height = "54px"; ring.style.opacity = "0.6"; });
         el.addEventListener("mouseleave", () => { ring.style.width = "32px"; ring.style.height = "32px"; ring.style.opacity = "1"; });
     });
 }
 
+// ── switchTab ─────────────────────────────────────────────────────────────
 function switchTab(key) {
+    if (key !== "sophomore") destroyGraveyard();
     activeTab = key;
-    // Update tab button states
     document.querySelectorAll(".overlay-tab-btn").forEach((btn) => {
         btn.classList.toggle("active", btn.dataset.tab === key);
     });
-    // Render cards for this tab
     const m = MONTHS[currentMonth];
     renderProjectCards(m.projects[key] || []);
 }
 
+// ── openProjects ──────────────────────────────────────────────────────────
 function openProjects() {
     const m = MONTHS[currentMonth];
     document.getElementById("overlay-header").textContent = m.name;
     document.getElementById("overlay-subhead").textContent = m.theme;
     document.getElementById("overlay-header").style.color = m.accentCSS;
 
-    // Build tab buttons if not already present
     let tabBar = document.getElementById("overlay-tab-bar");
     if (!tabBar) {
         tabBar = document.createElement("div");
@@ -1555,24 +1815,23 @@ function openProjects() {
             btn.addEventListener("click", () => switchTab(key));
             tabBar.appendChild(btn);
         });
-        // Insert tab bar before the projects grid
         const overlay = document.getElementById("projects-overlay");
         const projGrid = document.getElementById("overlay-projects");
         overlay.insertBefore(tabBar, projGrid);
     } else {
-        // Sync active state without rebuilding
         document.querySelectorAll(".overlay-tab-btn").forEach((btn) => {
             btn.classList.toggle("active", btn.dataset.tab === activeTab);
         });
     }
 
-    // Render current tab
     renderProjectCards(m.projects[activeTab] || []);
     document.getElementById("projects-overlay").classList.add("open");
     document.getElementById("close-btn").style.display = "block";
 }
 
+// ── closeProjects ─────────────────────────────────────────────────────────
 function closeProjects() {
+    destroyGraveyard();
     document.getElementById("projects-overlay").classList.remove("open");
     document.getElementById("close-btn").style.display = "none";
 }

@@ -517,3 +517,161 @@ body {
   text-shadow: 0 0 80px var(--label-glow, rgba(140, 190, 255, 0.25));
   user-select: none;
 }
+
+/* ── FEATURED CARD ──────────────────────────────────────────────── */
+.project-card.featured {
+    box-shadow:
+        0 0 0 1.5px rgba(212, 175, 55, 0.75),
+        0 0 18px 4px rgba(212, 175, 55, 0.22),
+        0 0 48px 10px rgba(212, 175, 55, 0.08);
+    position: relative;
+}
+.project-card.featured::before {
+    content: "";
+    position: absolute;
+    inset: -1.5px;
+    border-radius: inherit;
+    background: transparent;
+    box-shadow: 0 0 0 1.5px rgba(212, 175, 55, 0.4);
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.blog-trigger-btn {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 7px 0;
+    background: transparent;
+    border: 0.5px solid rgba(212, 175, 55, 0.4);
+    border-radius: 5px;
+    color: rgba(212, 175, 55, 0.9);
+    font-family: "Space Mono", monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.blog-trigger-btn:hover {
+    background: rgba(212, 175, 55, 0.08);
+}
+
+/* ── BLOG POPUP OVERLAY ─────────────────────────────────────────── */
+#blog-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.72);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+#blog-overlay.open {
+    display: flex;
+}
+#blog-popup {
+    background: #0b0b14;
+    border: 0.5px solid rgba(212, 175, 55, 0.35);
+    border-radius: 12px;
+    padding: 32px 30px 28px;
+    max-width: 560px;
+    width: 100%;
+    max-height: 82vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow:
+        0 0 0 1px rgba(212, 175, 55, 0.15),
+        0 0 40px 8px rgba(212, 175, 55, 0.07);
+}
+#blog-popup-close {
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 18px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    transition: color 0.15s;
+}
+#blog-popup-close:hover { color: rgba(255, 255, 255, 0.8); }
+
+.blog-tag-line {
+    font-family: "Space Mono", monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(212, 175, 55, 0.65);
+    margin: 0 0 8px;
+}
+.blog-title-main {
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.92);
+    margin: 0 0 6px;
+    line-height: 1.3;
+}
+.blog-meta-line {
+    font-family: "Space Mono", monospace;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.25);
+    margin: 0 0 20px;
+}
+.blog-divider {
+    border: none;
+    border-top: 0.5px solid rgba(212, 175, 55, 0.18);
+    margin: 18px 0;
+}
+.blog-body {
+    font-size: 13.5px;
+    line-height: 1.78;
+    color: rgba(255, 255, 255, 0.6);
+}
+.blog-body p { margin: 0 0 12px; }
+.blog-body p:last-child { margin: 0; }
+.blog-stats {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+}
+.blog-stat {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.03);
+    border: 0.5px solid rgba(255, 255, 255, 0.07);
+    border-radius: 8px;
+    padding: 12px 8px;
+    text-align: center;
+}
+.blog-stat-n {
+    font-family: "Space Mono", monospace;
+    font-size: 17px;
+    color: rgba(212, 175, 55, 0.85);
+    display: block;
+    margin-bottom: 4px;
+}
+.blog-stat-l {
+    font-family: "Space Mono", monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.25);
+}
+.blog-visit-link {
+    display: inline-block;
+    margin-top: 20px;
+    font-family: "Space Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(212, 175, 55, 0.75);
+    text-decoration: none;
+    border-bottom: 0.5px solid rgba(212, 175, 55, 0.3);
+    padding-bottom: 2px;
+    transition: color 0.15s;
+}
+.blog-visit-link:hover { color: rgba(212, 175, 55, 1); }
