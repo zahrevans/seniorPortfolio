@@ -85,7 +85,7 @@ const MONTHS = [
             sophomore: [],
             junior: [
                 { tag: "HTML / CSS", title: "President Research: Andrew Jackson", desc: "Research site profiling Andrew Jackson — biography, presidency, and legacy.", link: "https://zahrevans.github.io/PresidentResearch/" },
-                
+
                 { tag: "HTML / CSS", title: "April Wildcard", desc: "April monthly site — a free-choice wildcard build experimenting with new layouts.", link: "https://zahrevans.github.io/aprilmonthlysite/" },
             ],
             senior: [
@@ -218,10 +218,10 @@ const MONTHS = [
                 { tag: "HTML / CSS", title: "Look Ma' I'm Famous", desc: "Create an autobiographical website for a Famous Historical Figure (born before 1900).", link: "https://zahrevans.github.io/LookMaImFamous/" },
             ],
             senior: [
-                
+
                 { tag: "AJAX / HTML", title: "Cards With Friends", desc: "AJAX basics — fetching and rendering data from external sources.", link: "https://zahrevans.github.io/ajaxbasics/" },
                 { tag: "AJAX / HTML", title: "Friends' Schedules", desc: "AJAX project loading and displaying schedule data dynamically.", link: "https://zahrevans.github.io/ajaxschedules/" },
-                
+
             ],
         },
         camFrom: { x: -50, y: -25, z: 25 },
@@ -266,7 +266,7 @@ const MONTHS = [
                 { tag: "HTML / CSS / JS", title: "Magic 8 Ball", desc: "Click for fortunes — an interactive Magic 8 Ball with randomized responses.", link: "https://zahrevans.github.io/MagicEightBall/" },
             ],
             senior: [
-                
+
                 { tag: "CSS / GALLERY", title: "IS219 Project 3 Gallery", desc: "NJIT IS219 starter files — a gallery layout build for the third course project.", link: "https://zahrevans.github.io/NJIT-3_StarterFiles/" },
                 { tag: "HTML / CSS", title: "Serial Killers", desc: "Research-style site profiling notorious figures (Ted Kaczynski overview, etc.).", link: "https://zahrevans.github.io/Serial-killer-Website/" },
                 { tag: "HTML / CSS / JS", title: "Holiday Coloring Book", desc: "Interactive coloring book with holiday-themed line-art and a color picker.", link: "https://zahrevans.github.io/holidaycoloringbook/" },
@@ -1521,10 +1521,10 @@ function buildGraveyard(container) {
 
     // Tombstone SVG
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-   svg.setAttribute("viewBox", "0 0 120 370");
-svg.setAttribute("width", "120");
-svg.setAttribute("height", "370");
-svg.innerHTML = `
+    svg.setAttribute("viewBox", "0 0 120 370");
+    svg.setAttribute("width", "120");
+    svg.setAttribute("height", "370");
+    svg.innerHTML = `
   <defs>
     <pattern id="gr" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
       <circle cx="1" cy="1" r="0.4" fill="rgba(255,255,255,0.06)"/>
@@ -1669,9 +1669,9 @@ const FEATURED_BLOGS = {
         tag: "MHS Sports — Behind the build",
         title: "Building a Hub for Every Team",
         meta: "Senior Year · Feb 2025 · CSS / Multi-Page",
-        body: `<p>MHS Sports started as a simple idea — one landing page that linked out to every team. What it became was a real exercise in consistent design language across multiple pages without a single line of JavaScript.</p>
-               <p>Every team page shares the same grid structure but carries its own color accent and photo treatment, making each feel distinct while still cohesive. Getting the navigation to feel natural across six pages with pure CSS was the biggest challenge.</p>
-               <p>This project pushed me to think about design systems before I knew what a design system was.</p>`,
+        body: `<p>The goal for this project was to locate a problem in our school and solve it, my problem was that there was no easy way to accessthe schools sport schedules, and decied to tackle the issue. </p>
+               <p>I made a calendar that uses a grid to represent days. Every team page shares the same grid structure but carries its own color accent and photo treatment, making each feel distinct while still cohesive. Getting the navigation to feel natural across six pages with pure CSS was the biggest challenge.</p>
+               <p>This project pushed me to think about design systems and showed me the importance of JSON files.</p>`,
         stats: [{ n: "6", l: "pages" }, { n: "~3 wks", l: "build time" }, { n: "CSS only", l: "no JS" }],
         link: "https://zahrevans.github.io/MHSSports/",
     },
@@ -1679,7 +1679,7 @@ const FEATURED_BLOGS = {
         tag: "MHS Wrestling — Behind the build",
         title: "A Team Site That Earns Its Weight",
         meta: "Senior Year · Apr 2025 · CSS / Multi-Page",
-        body: `<p>Wrestling needed something grittier than the sports hub. The brief was a full team site — roster, schedule, and program history — all in a single cohesive package.</p>
+        body: `<p>The goal for this project was to make a website for a client of out choice, and i chose the coach of the marlboro wrestling team</p>
                <p>The design leans dark and physical. Heavy typography, tight grids, and a monochromatic palette with a single red accent. The roster page uses a card-per-wrestler layout that scales cleanly whether there are eight athletes or thirty.</p>
                <p>Multi-page architecture meant planning every internal link before writing a single line of CSS — a good lesson in thinking before coding.</p>`,
         stats: [{ n: "5", l: "pages" }, { n: "~2 wks", l: "build time" }, { n: "CSS / HTML", l: "stack" }],
@@ -1692,7 +1692,7 @@ const FEATURED_BLOGS = {
         body: `<p>The Random Name Generator was my first real encounter with JavaScript arrays doing actual work. Two lists — first names and last names — combined on click to spit out a full name. Simple concept, but getting the randomness to feel genuinely surprising took more thought than expected.</p>
                <p>Beyond the logic, this was a layout exercise: how do you make a single-action utility feel satisfying? The answer turned out to be generous whitespace, a bold display font for the result, and a button that has real weight to it.</p>
                <p>It's a small project, but it's the one where JavaScript stopped feeling like magic and started feeling like a tool.</p>`,
-        stats: [{ n: "500+", l: "combos" }, { n: "1 week", l: "build time" }, { n: "Vanilla JS", l: "stack" }],
+        stats: [{ n: "1Bil+", l: "combos" }, { n: "1 week", l: "build time" }, { n: "Vanilla JS", l: "stack" }],
         link: "https://zahrevans.github.io/NameGeneratorSite/",
     },
 };
